@@ -3,27 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7F9B409B247FB05500C93F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B409A247FB05500C93F04 /* AppDelegate.swift */; };
 		7F9B409D247FB05500C93F04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B409C247FB05500C93F04 /* SceneDelegate.swift */; };
-		7F9B409F247FB05500C93F04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B409E247FB05500C93F04 /* ViewController.swift */; };
 		7F9B40A2247FB05500C93F04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40A0247FB05500C93F04 /* Main.storyboard */; };
 		7F9B40A4247FB05800C93F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40A3247FB05800C93F04 /* Assets.xcassets */; };
 		7F9B40A7247FB05800C93F04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40A5247FB05800C93F04 /* LaunchScreen.storyboard */; };
+		7F9B40B0247FB57000C93F04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40AF247FB57000C93F04 /* LoginViewController.swift */; };
+		7F9B40B4248003D700C93F04 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40B3248003D700C93F04 /* RegisterViewController.swift */; };
+		7F9B40B62480094D00C93F04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40B52480094C00C93F04 /* GoogleService-Info.plist */; };
+		7F9B40B82480151F00C93F04 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40B72480151F00C93F04 /* Constant.swift */; };
+		7F9B40BA2482475F00C93F04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40B92482475F00C93F04 /* HomeViewController.swift */; };
+		7F9B40BC24825E1A00C93F04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40BB24825E1A00C93F04 /* BaseViewController.swift */; };
+		7F9B40BE248261E600C93F04 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40BD248261E600C93F04 /* NewMessageViewController.swift */; };
+		7F9B40C0248263EB00C93F04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40BF248263EB00C93F04 /* User.swift */; };
+		7F9B40C42482649B00C93F04 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40C22482649B00C93F04 /* UserCell.swift */; };
+		7F9B40C52482649B00C93F04 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40C32482649B00C93F04 /* UserCell.xib */; };
+		7F9B40C82483812300C93F04 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40C72483812300C93F04 /* PhotoHelper.swift */; };
+		980BEE3B6FCDB61E7392218A /* Pods_Edana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7F9B4097247FB05500C93F04 /* Edana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9B409A247FB05500C93F04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9B409C247FB05500C93F04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F9B409E247FB05500C93F04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F9B40A1247FB05500C93F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F9B40A3247FB05800C93F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F9B40A6247FB05800C93F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9B40A8247FB05800C93F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F9B40AF247FB57000C93F04 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7F9B40B3248003D700C93F04 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7F9B40B52480094C00C93F04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F9B40B72480151F00C93F04 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		7F9B40B92482475F00C93F04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7F9B40BB24825E1A00C93F04 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7F9B40BD248261E600C93F04 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		7F9B40BF248263EB00C93F04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F9B40C22482649B00C93F04 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		7F9B40C32482649B00C93F04 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		7F9B40C72483812300C93F04 /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
+		937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		970BCCC6852953C61C855506 /* Pods-Edana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edana.debug.xcconfig"; path = "Target Support Files/Pods-Edana/Pods-Edana.debug.xcconfig"; sourceTree = "<group>"; };
+		D9D577EC60248E729C550573 /* Pods-Edana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edana.release.xcconfig"; path = "Target Support Files/Pods-Edana/Pods-Edana.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				980BEE3B6FCDB61E7392218A /* Pods_Edana.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A1C0914DD318F8C3C2FB7A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				970BCCC6852953C61C855506 /* Pods-Edana.debug.xcconfig */,
+				D9D577EC60248E729C550573 /* Pods-Edana.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7F9B408E247FB05500C93F04 = {
 			isa = PBXGroup;
 			children = (
 				7F9B4099247FB05500C93F04 /* Edana */,
 				7F9B4098247FB05500C93F04 /* Products */,
+				6A1C0914DD318F8C3C2FB7A5 /* Pods */,
+				9F16C295C55E406C6A45C438 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +94,71 @@
 			children = (
 				7F9B409A247FB05500C93F04 /* AppDelegate.swift */,
 				7F9B409C247FB05500C93F04 /* SceneDelegate.swift */,
-				7F9B409E247FB05500C93F04 /* ViewController.swift */,
+				7F9B40B2247FD75A00C93F04 /* Model */,
+				7F9B40B1247FD75500C93F04 /* View */,
+				7F9B40AE247FB54C00C93F04 /* Controller */,
+				7F9B40C624837C2E00C93F04 /* Helper */,
 				7F9B40A0247FB05500C93F04 /* Main.storyboard */,
+				7F9B40B72480151F00C93F04 /* Constant.swift */,
 				7F9B40A3247FB05800C93F04 /* Assets.xcassets */,
 				7F9B40A5247FB05800C93F04 /* LaunchScreen.storyboard */,
+				7F9B40B52480094C00C93F04 /* GoogleService-Info.plist */,
 				7F9B40A8247FB05800C93F04 /* Info.plist */,
 			);
 			path = Edana;
+			sourceTree = "<group>";
+		};
+		7F9B40AE247FB54C00C93F04 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7F9B40AF247FB57000C93F04 /* LoginViewController.swift */,
+				7F9B40B3248003D700C93F04 /* RegisterViewController.swift */,
+				7F9B40B92482475F00C93F04 /* HomeViewController.swift */,
+				7F9B40BB24825E1A00C93F04 /* BaseViewController.swift */,
+				7F9B40BD248261E600C93F04 /* NewMessageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7F9B40B1247FD75500C93F04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F9B40C12482646F00C93F04 /* XIBs */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F9B40B2247FD75A00C93F04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F9B40BF248263EB00C93F04 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F9B40C12482646F00C93F04 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				7F9B40C22482649B00C93F04 /* UserCell.swift */,
+				7F9B40C32482649B00C93F04 /* UserCell.xib */,
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+		7F9B40C624837C2E00C93F04 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7F9B40C72483812300C93F04 /* PhotoHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9F16C295C55E406C6A45C438 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F9B40AB247FB05800C93F04 /* Build configuration list for PBXNativeTarget "Edana" */;
 			buildPhases = (
+				E728B1E6C859344DD107BBE3 /* [CP] Check Pods Manifest.lock */,
 				7F9B4093247FB05500C93F04 /* Sources */,
 				7F9B4094247FB05500C93F04 /* Frameworks */,
 				7F9B4095247FB05500C93F04 /* Resources */,
+				6386088643C92C0A867AE42B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,21 +222,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9B40A7247FB05800C93F04 /* LaunchScreen.storyboard in Resources */,
+				7F9B40B62480094D00C93F04 /* GoogleService-Info.plist in Resources */,
 				7F9B40A4247FB05800C93F04 /* Assets.xcassets in Resources */,
 				7F9B40A2247FB05500C93F04 /* Main.storyboard in Resources */,
+				7F9B40C52482649B00C93F04 /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6386088643C92C0A867AE42B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Edana/Pods-Edana-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Edana/Pods-Edana-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Edana/Pods-Edana-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E728B1E6C859344DD107BBE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Edana-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F9B4093247FB05500C93F04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9B409F247FB05500C93F04 /* ViewController.swift in Sources */,
+				7F9B40B0247FB57000C93F04 /* LoginViewController.swift in Sources */,
 				7F9B409B247FB05500C93F04 /* AppDelegate.swift in Sources */,
+				7F9B40B82480151F00C93F04 /* Constant.swift in Sources */,
 				7F9B409D247FB05500C93F04 /* SceneDelegate.swift in Sources */,
+				7F9B40C82483812300C93F04 /* PhotoHelper.swift in Sources */,
+				7F9B40B4248003D700C93F04 /* RegisterViewController.swift in Sources */,
+				7F9B40C0248263EB00C93F04 /* User.swift in Sources */,
+				7F9B40BC24825E1A00C93F04 /* BaseViewController.swift in Sources */,
+				7F9B40BA2482475F00C93F04 /* HomeViewController.swift in Sources */,
+				7F9B40C42482649B00C93F04 /* UserCell.swift in Sources */,
+				7F9B40BE248261E600C93F04 /* NewMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +430,7 @@
 		};
 		7F9B40AC247FB05800C93F04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 970BCCC6852953C61C855506 /* Pods-Edana.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +449,7 @@
 		};
 		7F9B40AD247FB05800C93F04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9D577EC60248E729C550573 /* Pods-Edana.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

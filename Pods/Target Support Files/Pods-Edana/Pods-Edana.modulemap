@@ -1,0 +1,6 @@
+framework module Pods_Edana {
+  umbrella header "Pods-Edana-umbrella.h"
+
+  export *
+  module * { export * }
+}
