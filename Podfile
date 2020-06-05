@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'Edana' do
   use_frameworks!
@@ -7,5 +7,6 @@ target 'Edana' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Kingfisher', '~> 5.0'
 
 end

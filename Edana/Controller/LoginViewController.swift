@@ -31,7 +31,11 @@ class LoginViewController: UIViewController {
             }
             
             // success login
-            self?.dismiss(animated: true, completion: nil)
+            self?.dismiss(animated: true, completion: {
+                if let topVC = UIApplication.getTopViewController() as? HomeViewController {
+                    topVC.checkUserLoggedIn()
+                }
+            })
             
         } // end Auth
     }

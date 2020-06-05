@@ -12,11 +12,23 @@ import Firebase
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var homeMessageTableView: UITableView!
     
     let db = Firestore.firestore()
+    var messages = [Message]()
+    var messagesDictionary: [String : Message] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        homeMessageTableView.delegate = self
+        homeMessageTableView.dataSource = self
+        homeMessageTableView.register(UINib(nibName: Constant.TBID.homeMessageCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.homeMessageCeell)
+        
+        observeNewMessages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         checkUserLoggedIn()
     }
     
@@ -26,11 +38,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func addNewMessagePressed(_ sender: UIBarButtonItem) {
         let vc = self.storyboard?.instantiateViewController(identifier: Constant.VCID.newMessage) as! NewMessageViewController
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     
     
     func checkUserLoggedIn() {
+        print("check login")
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
@@ -44,7 +58,7 @@ class HomeViewController: UIViewController {
                 print(err.localizedDescription)
                 return
             } else {
-                print(snapshot!.data())
+                self.navigationItem.title = snapshot?.data()?[Constant.DBKey.name] as? String
             }
         } // end get docs
     }
@@ -57,9 +71,51 @@ class HomeViewController: UIViewController {
         } // end do-catch
         
         let loginController = self.storyboard?.instantiateViewController(identifier: Constant.VCID.login) as! LoginViewController
-        present(loginController, animated: true, completion: nil )
+        present(loginController, animated: true, completion: nil)
     }
     
+    func observeNewMessages() {
+        FirebaseService.observeNewMessages(of: Auth.auth().currentUser!.uid) { (messageDict) in
+            if let dict = messageDict {
+                self.messagesDictionary.update(other: dict)
+                self.messages = Array(self.messagesDictionary.values)
+                self.messages = self.messages.sorted()
+                
+                DispatchQueue.main.async {
+                    self.homeMessageTableView.reloadData()
+                }
+            } // end dict
+        } // end observing msg
+    }
+}
+
+extension HomeViewController: NewMessageDelegate {
+    func didFinishChooseUser(user: User?) {
+        if let user = user {
+            if let viewController = self.storyboard?.instantiateViewController(identifier: Constant.VCID.chatlog) as? ChatLogViewController {
+                viewController.toUser = user
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        } // end if let
+    }
+}
 
 
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = homeMessageTableView.dequeueReusableCell(withIdentifier: Constant.TBID.homeMessageCeell, for: indexPath) as! HomeMessageCell
+        cell.message = messages[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
+    
+    
 }

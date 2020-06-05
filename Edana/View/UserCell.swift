@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserCell: UITableViewCell {
 
@@ -16,6 +17,7 @@ class UserCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
@@ -27,6 +29,11 @@ class UserCell: UITableViewCell {
     func updateUI() {
         nameLabel.text = user?.name
         emailLabel.text = user?.email
+        if let url = user?.profileImageUrl {
+            DispatchQueue.main.async {
+                self.profileImageView.kf.setImage(with: url)
+            }
+        }
     }
 
     
