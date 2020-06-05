@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
                     topVC.checkUserLoggedIn()
                 }
             })
-            
         } // end Auth
     }
     

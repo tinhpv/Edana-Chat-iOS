@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
 
 class HomeMessageCell: UITableViewCell {
     
@@ -28,7 +29,10 @@ class HomeMessageCell: UITableViewCell {
     }
 
     func updateUI() {
-        FirebaseService.loadUser(with: message!.receiverID) { (user) in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let userToFetch = message!.senderID == uid ? message!.receiverID : message!.senderID
+        
+        FirebaseService.getUserInfo(with: userToFetch) { (user) in
             if user != nil {
                 self.friendNameLabel.text = user?.name
                 self.friendProfileImageView.kf.setImage(with: user?.profileImageUrl)

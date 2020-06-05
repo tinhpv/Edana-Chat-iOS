@@ -15,6 +15,9 @@ struct Constant {
         static let userCellXibName = "UserCell"
         static let homeMessageCeell = "home_message_cell"
         static let homeMessageCellXibName = "HomeMessageCell"
+        
+        static let chatCell = "chat_cell"
+        static let chatCellXibName = "ChatCell"
     }
     
     struct DBKey {

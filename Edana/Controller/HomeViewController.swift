@@ -25,11 +25,6 @@ class HomeViewController: UIViewController {
         homeMessageTableView.dataSource = self
         homeMessageTableView.register(UINib(nibName: Constant.TBID.homeMessageCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.homeMessageCeell)
         
-        observeNewMessages()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        checkUserLoggedIn()
     }
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
@@ -44,10 +39,12 @@ class HomeViewController: UIViewController {
     
     
     func checkUserLoggedIn() {
-        print("check login")
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
+            self.messagesDictionary.removeAll()
+            self.messages.removeAll()
+            self.homeMessageTableView.reloadData()
             loadUserInfo(of: Auth.auth().currentUser!.uid)
         }
     }
@@ -59,6 +56,7 @@ class HomeViewController: UIViewController {
                 return
             } else {
                 self.navigationItem.title = snapshot?.data()?[Constant.DBKey.name] as? String
+                self.observeNewMessages()
             }
         } // end get docs
     }
@@ -101,7 +99,6 @@ extension HomeViewController: NewMessageDelegate {
 }
 
 
-
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
@@ -115,6 +112,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(100)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMsg = messages[indexPath.row]
+        FirebaseService.getUserInfo(with: selectedMsg.chatPartnerID()!) { (user) in
+            guard let user = user else { return }
+            let vc = self.storyboard?.instantiateViewController(identifier: Constant.VCID.chatlog) as! ChatLogViewController
+            vc.toUser = user
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

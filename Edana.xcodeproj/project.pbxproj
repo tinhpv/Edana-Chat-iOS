@@ -23,12 +23,15 @@
 		7F9B40C42482649B00C93F04 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40C22482649B00C93F04 /* UserCell.swift */; };
 		7F9B40C52482649B00C93F04 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40C32482649B00C93F04 /* UserCell.xib */; };
 		7F9B40C82483812300C93F04 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40C72483812300C93F04 /* PhotoHelper.swift */; };
-		7F9B40CB2483B70300C93F04 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40CA2483B70300C93F04 /* FirebaseService.swift */; };
+		7F9B40CB2483B70300C93F04 /* FirebaseService+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40CA2483B70300C93F04 /* FirebaseService+User.swift */; };
 		7F9B40CD2488CA0900C93F04 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40CC2488CA0900C93F04 /* ChatLogViewController.swift */; };
 		7F9B40CF2488EC4100C93F04 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40CE2488EC4100C93F04 /* Message.swift */; };
 		7F9B40D22488EED800C93F04 /* HomeMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40D02488EED800C93F04 /* HomeMessageCell.swift */; };
 		7F9B40D32488EED800C93F04 /* HomeMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40D12488EED800C93F04 /* HomeMessageCell.xib */; };
 		7F9B40D52489174D00C93F04 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40D42489174D00C93F04 /* Extension.swift */; };
+		7F9B40D82489E84F00C93F04 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40D62489E84F00C93F04 /* ChatCell.swift */; };
+		7F9B40D92489E84F00C93F04 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40D72489E84F00C93F04 /* ChatCell.xib */; };
+		7F9B40DB2489EFD500C93F04 /* FirebaseService+Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40DA2489EFD500C93F04 /* FirebaseService+Message.swift */; };
 		980BEE3B6FCDB61E7392218A /* Pods_Edana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,12 +54,15 @@
 		7F9B40C22482649B00C93F04 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		7F9B40C32482649B00C93F04 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		7F9B40C72483812300C93F04 /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
-		7F9B40CA2483B70300C93F04 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		7F9B40CA2483B70300C93F04 /* FirebaseService+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseService+User.swift"; sourceTree = "<group>"; };
 		7F9B40CC2488CA0900C93F04 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		7F9B40CE2488EC4100C93F04 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7F9B40D02488EED800C93F04 /* HomeMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMessageCell.swift; sourceTree = "<group>"; };
 		7F9B40D12488EED800C93F04 /* HomeMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMessageCell.xib; sourceTree = "<group>"; };
 		7F9B40D42489174D00C93F04 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7F9B40D62489E84F00C93F04 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		7F9B40D72489E84F00C93F04 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		7F9B40DA2489EFD500C93F04 /* FirebaseService+Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseService+Message.swift"; sourceTree = "<group>"; };
 		937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Edana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		970BCCC6852953C61C855506 /* Pods-Edana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edana.debug.xcconfig"; path = "Target Support Files/Pods-Edana/Pods-Edana.debug.xcconfig"; sourceTree = "<group>"; };
 		D9D577EC60248E729C550573 /* Pods-Edana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Edana.release.xcconfig"; path = "Target Support Files/Pods-Edana/Pods-Edana.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			children = (
 				7F9B40C22482649B00C93F04 /* UserCell.swift */,
 				7F9B40D02488EED800C93F04 /* HomeMessageCell.swift */,
+				7F9B40D62489E84F00C93F04 /* ChatCell.swift */,
 				7F9B40C12482646F00C93F04 /* XIBs */,
 			);
 			path = View;
@@ -157,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9B40D12488EED800C93F04 /* HomeMessageCell.xib */,
+				7F9B40D72489E84F00C93F04 /* ChatCell.xib */,
 				7F9B40C32482649B00C93F04 /* UserCell.xib */,
 			);
 			path = XIBs;
@@ -174,7 +182,8 @@
 		7F9B40C92483B6DB00C93F04 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7F9B40CA2483B70300C93F04 /* FirebaseService.swift */,
+				7F9B40CA2483B70300C93F04 /* FirebaseService+User.swift */,
+				7F9B40DA2489EFD500C93F04 /* FirebaseService+Message.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9B40D92489E84F00C93F04 /* ChatCell.xib in Resources */,
 				7F9B40A7247FB05800C93F04 /* LaunchScreen.storyboard in Resources */,
 				7F9B40B62480094D00C93F04 /* GoogleService-Info.plist in Resources */,
 				7F9B40D32488EED800C93F04 /* HomeMessageCell.xib in Resources */,
@@ -305,9 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F9B40DB2489EFD500C93F04 /* FirebaseService+Message.swift in Sources */,
 				7F9B40B0247FB57000C93F04 /* LoginViewController.swift in Sources */,
 				7F9B409B247FB05500C93F04 /* AppDelegate.swift in Sources */,
 				7F9B40B82480151F00C93F04 /* Constant.swift in Sources */,
+				7F9B40D82489E84F00C93F04 /* ChatCell.swift in Sources */,
 				7F9B409D247FB05500C93F04 /* SceneDelegate.swift in Sources */,
 				7F9B40C82483812300C93F04 /* PhotoHelper.swift in Sources */,
 				7F9B40CD2488CA0900C93F04 /* ChatLogViewController.swift in Sources */,
@@ -318,7 +330,7 @@
 				7F9B40BA2482475F00C93F04 /* HomeViewController.swift in Sources */,
 				7F9B40C42482649B00C93F04 /* UserCell.swift in Sources */,
 				7F9B40D22488EED800C93F04 /* HomeMessageCell.swift in Sources */,
-				7F9B40CB2483B70300C93F04 /* FirebaseService.swift in Sources */,
+				7F9B40CB2483B70300C93F04 /* FirebaseService+User.swift in Sources */,
 				7F9B40BE248261E600C93F04 /* NewMessageViewController.swift in Sources */,
 				7F9B40CF2488EC4100C93F04 /* Message.swift in Sources */,
 			);

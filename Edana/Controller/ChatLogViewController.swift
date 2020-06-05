@@ -11,7 +11,10 @@ import FirebaseAuth
 
 class ChatLogViewController: UIViewController {
     
+    @IBOutlet weak var chatlogTableView: UITableView!
     @IBOutlet weak var chatTextField: UITextField!
+    
+    var message = [Message]()
     
     var toUser: User? {
         didSet {
@@ -23,8 +26,9 @@ class ChatLogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        chatlogTableView.dataSource = self
+        chatlogTableView.delegate = self
+        chatlogTableView.register(UINib(nibName: Constant.TBID.chatCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.chatCell)
     }
     
     @IBAction func sendMsgPressed(_ sender: Any) {
@@ -40,4 +44,20 @@ class ChatLogViewController: UIViewController {
     }
     
 
+}
+
+extension ChatLogViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.chatCell, for: indexPath) as! ChatCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
+    
 }
