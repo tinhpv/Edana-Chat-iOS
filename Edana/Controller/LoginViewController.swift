@@ -12,9 +12,23 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var emailView: UIView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    fileprivate func setupUI() {
+        emailView.layer.cornerRadius = 5
+        passwordView.layer.cornerRadius = 5
+        loginButton.layer.cornerRadius = 8
     }
     
     
