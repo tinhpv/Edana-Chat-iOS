@@ -8,13 +8,11 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeMessageTableView: UITableView!
-    
-    let db = Firestore.firestore()
+
     var messages = [Message]()
     var messagesDictionary: [String : Message] = [:]
 
@@ -27,6 +25,10 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkUserLoggedIn()
+    }
+    
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         perform(#selector(self.handleLogout))
     }
@@ -37,29 +39,25 @@ class HomeViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    func loadCurrentUserInfo() {
+        self.messagesDictionary.removeAll()
+        self.messages.removeAll()
+        self.homeMessageTableView.reloadData()
+        FirebaseService.getUserInfo(with: Auth.auth().currentUser!.uid) { (user) in
+            guard let user = user else { return }
+            self.navigationItem.title = user.name
+            self.observeNewMessages()
+        } // end get user
+    }
     
     func checkUserLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
-            self.messagesDictionary.removeAll()
-            self.messages.removeAll()
-            self.homeMessageTableView.reloadData()
-            loadUserInfo(of: Auth.auth().currentUser!.uid)
-        }
+            loadCurrentUserInfo()
+        } // end check auth
     }
     
-    func loadUserInfo(of userId: String) {
-        db.collection(Constant.DBKey.users).document(userId).getDocument { (snapshot, error) in
-            if let err = error {
-                print(err.localizedDescription)
-                return
-            } else {
-                self.navigationItem.title = snapshot?.data()?[Constant.DBKey.name] as? String
-                self.observeNewMessages()
-            }
-        } // end get docs
-    }
 
     @objc func handleLogout() {
         do {
@@ -73,17 +71,25 @@ class HomeViewController: UIViewController {
     }
     
     func observeNewMessages() {
-        FirebaseService.observeNewMessages(of: Auth.auth().currentUser!.uid) { (messageDict) in
-            if let dict = messageDict {
-                self.messagesDictionary.update(other: dict)
+        FirebaseService.observeNewMessages(of: Auth.auth().currentUser!.uid) { (msg) in
+            if let message = msg {
+                self.messagesDictionary[message.chatPartnerID()!] = message
                 self.messages = Array(self.messagesDictionary.values)
                 self.messages = self.messages.sorted()
-                
-                DispatchQueue.main.async {
-                    self.homeMessageTableView.reloadData()
-                }
-            } // end dict
-        } // end observing msg
+            }
+            
+            // postpone to reload multiple times
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.reloadTable), userInfo: nil, repeats: false)
+        } // end observing
+    }
+    
+    var timer: Timer?
+    
+    @objc func reloadTable() {
+        DispatchQueue.main.async {
+            self.homeMessageTableView.reloadData()
+        }
     }
 }
 

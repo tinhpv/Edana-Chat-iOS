@@ -15,36 +15,24 @@ protocol NewMessageDelegate {
 
 class NewMessageViewController: UITableViewController {
     
-    let db = Firestore.firestore()
     var userList = [User]()
     var delegate: NewMessageDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: Constant.TBID.userCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.userCell)
-        loadUsers()
+        loadAllUsers()
     }
     
-    func loadUsers() {
-        db.collection(Constant.DBKey.users).getDocuments { (snapshot, error) in
-            if let err = error {
-                print(err.localizedDescription)
-                return
-            } else {
-                for doc in snapshot!.documents {
-                    let userDict = doc.data() as! [String : String]
-                    self.userList.append(User(
-                        id: doc.documentID,
-                        name: userDict[Constant.DBKey.name]!,
-                        email: userDict[Constant.DBKey.email]!,
-                        profileImageUrl: URL(string: userDict[Constant.DBKey.profileImageUrl]!)))
-                } // end for ducuments
-                
+    func loadAllUsers() {
+        FirebaseService.getAllUsers { (users) in
+            if let users = users {
+                self.userList = users
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            } // end if let
-        } // end get documents
+            }
+        } // end get all users
     }
 
     // MARK: - Table view data source

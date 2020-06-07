@@ -14,11 +14,12 @@ class ChatLogViewController: UIViewController {
     @IBOutlet weak var chatlogTableView: UITableView!
     @IBOutlet weak var chatTextField: UITextField!
     
-    var message = [Message]()
+    var messages = [Message]()
     
     var toUser: User? {
         didSet {
             navigationItem.title = toUser!.name
+            loadAndObserveNewMessages()
         }
     }
     
@@ -43,16 +44,27 @@ class ChatLogViewController: UIViewController {
         } // end if empty text
     }
     
+    func loadAndObserveNewMessages() {
+        FirebaseService.observeMessagesForSingleChatLog(currentUserID: fromUser!.uid, partnerID: toUser!.id) { (msg) in
+            if let msg = msg {
+                self.messages.append(msg)
+                DispatchQueue.main.async {
+                    self.chatlogTableView.reloadData()
+                }
+            }
+        } // end observing
+    }
 
 }
 
 extension ChatLogViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.chatCell, for: indexPath) as! ChatCell
+        cell.message = self.messages[indexPath.row]
         return cell
     }
     

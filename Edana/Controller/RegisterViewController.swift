@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
-import FirebaseStorage
 
 class RegisterViewController: UIViewController {
     
@@ -45,8 +42,12 @@ class RegisterViewController: UIViewController {
             let password = passwordTextField.text,
             let name = nameTextField.text else { return }
         
-        FirebaseService.handleCreateNewUser(email: email, password: password, name: name, profileImage: profileImageView.image) {
-            self.dismiss(animated: true, completion: nil)
-        }
+        FirebaseService.handleCreateNewUser(email: email, password: password, name: name, profileImage: profileImageView.image) { error in
+            if (error != nil) {
+                
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } // end create new user
     }
 }

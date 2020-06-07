@@ -9,10 +9,20 @@
 import Foundation
 import UIKit
 import FirebaseStorage
-import FirebaseFirestore
 import FirebaseAuth
+import FirebaseDatabase
 
 struct FirebaseService {
+    
+    static func handleLogin(email: String, password: String, completion: @escaping (Bool) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if error != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        } // end Auth
+    }
     
     private static func saveImage(_ image: UIImage, _ completion: @escaping (URL?) -> Void) {
         let storageRef = Storage.storage().reference()
@@ -38,14 +48,13 @@ struct FirebaseService {
         
     }
     
-    static func handleCreateNewUser(email: String, password: String, name: String, profileImage: UIImage?, completion: @escaping () -> Void) {
+    static func handleCreateNewUser(email: String, password: String, name: String, profileImage: UIImage?, completion: @escaping (Error?) -> Void) {
         if let image = profileImage {
             saveImage(image) { (url) in
                 if let url = url {
                     Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                         if error != nil {
-                            print(error!.localizedDescription)
-                            return
+                            completion(error)
                         }
 
                         guard let userUID = result?.user.uid else { return }
@@ -54,12 +63,16 @@ struct FirebaseService {
                             Constant.DBKey.email : email,
                             Constant.DBKey.profileImageUrl : url.absoluteString
                         ]
-
-                        Firestore.firestore().collection(Constant.DBKey.users).document(userUID).setData(userData, merge: true)
-
-                        completion()
+                        
+                        let db = Database.database().reference()
+                        db.child(Constant.DBKey.users).child(userUID).setValue(userData) { (err, dbRef) in
+                            if err != nil {
+                                completion(err)
+                            } else {
+                                completion(nil)
+                            }
+                        } // end setValue
                     } // end Auth
-                    
                 } // end check url
             } // end save
         } // end check image
@@ -67,18 +80,38 @@ struct FirebaseService {
 
     
     static func getUserInfo(with uid: String, completion: @escaping (User?) -> Void) {
-        Firestore.firestore().collection(Constant.DBKey.users).document(uid).getDocument { (snapshot, error) in
-            if let _ = error {
-                completion(nil)
-            } else {
-                let userDict = snapshot!.data() as! [String : String]
+        let db = Database.database().reference()
+        db.child(Constant.DBKey.users).child(uid).observe(.value) { (snapshot) in
+            if let userDict = snapshot.value as? [String : String] {
                 let user = User(
-                            id: snapshot!.documentID,
-                            name: userDict[Constant.DBKey.name]!,
-                            email: userDict[Constant.DBKey.email]!,
-                            profileImageUrl: URL(string: userDict[Constant.DBKey.profileImageUrl]!))
+                        id: snapshot.key,
+                        name: userDict[Constant.DBKey.name]!,
+                        email: userDict[Constant.DBKey.email]!,
+                        profileImageUrl: URL(string: userDict[Constant.DBKey.profileImageUrl]!))
                 completion(user)
-            }
-        } // end get document
+            } // end get snapshot value
+        }
+    }
+    
+    static func getAllUsers(completion: @escaping ([User]?) -> Void) {
+        let db = Database.database().reference()
+        var userList = [User]()
+        db.child(Constant.DBKey.users).observe(.value) { (snapshot) in
+            if let resDict = snapshot.value as? [String : AnyObject] {
+                for (key, userDict) in resDict {
+                    if key != Auth.auth().currentUser?.uid {
+                        let user = User(
+                            id: key,
+                            name: userDict[Constant.DBKey.name] as! String,
+                            email: userDict[Constant.DBKey.email]! as! String as! String,
+                            profileImageUrl: URL(string: userDict[Constant.DBKey.profileImageUrl]! as! String))
+                        userList.append(user)
+                    }
+                } // end for
+                completion(userList)
+            } else {
+                completion(nil)
+            } // end resDict
+        }
     }
 }

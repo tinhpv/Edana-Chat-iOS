@@ -4,9 +4,10 @@ target 'Edana' do
   use_frameworks!
 
   # Pods for Edana
-  pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher', '~> 5.0'
 
 end

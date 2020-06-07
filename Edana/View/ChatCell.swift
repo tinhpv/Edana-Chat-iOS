@@ -25,7 +25,14 @@ class ChatCell: UITableViewCell {
     }
     
     func updateUI() {
-        
+        if let msg = message {
+            textContentLabel.text = msg.text!
+            if msg.senderID == msg.chatPartnerID() {
+                chatBackgroundView.backgroundColor = UIColor.blue
+            } else {
+                chatBackgroundView.backgroundColor = UIColor.gray
+            }
+        }
     }
     
 }

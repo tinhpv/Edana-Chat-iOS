@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -23,20 +22,15 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard self != nil else { return }
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            // success login
-            self?.dismiss(animated: true, completion: {
-                if let topVC = UIApplication.getTopViewController() as? HomeViewController {
-                    topVC.checkUserLoggedIn()
-                }
-            })
-        } // end Auth
+        FirebaseService.handleLogin(email: email, password: password) { (isAuth) in
+            if isAuth {
+                self.dismiss(animated: true, completion: {
+                    if let topVC = UIApplication.getTopViewController() as? HomeViewController {
+                        topVC.loadCurrentUserInfo()
+                    }
+                }) // end dismiss
+            } // end if bool
+        }
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
