@@ -16,6 +16,8 @@ class HomeMessageCell: UITableViewCell {
     @IBOutlet weak var friendNameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var msgBackgroundView: UIView!
+    @IBOutlet weak var friendNameView: UIView!
     
     var message: Message? {
         didSet {
@@ -25,7 +27,9 @@ class HomeMessageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        msgBackgroundView.layer.cornerRadius = 10.0
+        friendNameView.layer.cornerRadius = 5.0
+        friendProfileImageView.maskCircle()
     }
 
     func updateUI() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F2CA7DC248EB12E0026D413 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2CA7DB248EB12E0026D413 /* CustomUIView.swift */; };
 		7F9B409B247FB05500C93F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B409A247FB05500C93F04 /* AppDelegate.swift */; };
 		7F9B409D247FB05500C93F04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B409C247FB05500C93F04 /* SceneDelegate.swift */; };
 		7F9B40A2247FB05500C93F04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40A0247FB05500C93F04 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F2CA7DB248EB12E0026D413 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		7F9B4097247FB05500C93F04 /* Edana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Edana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9B409A247FB05500C93F04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F9B409C247FB05500C93F04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7F2CA7DA248E3F910026D413 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		7F9B408E247FB05500C93F04 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +170,7 @@
 		7F9B40B1247FD75500C93F04 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7F2CA7DA248E3F910026D413 /* Navigation */,
 				7F9B40C22482649B00C93F04 /* UserCell.swift */,
 				7F9B40D02488EED800C93F04 /* HomeMessageCell.swift */,
 				7F9B40D62489E84F00C93F04 /* ChatCell.swift */,
@@ -224,6 +234,7 @@
 			children = (
 				7F9B40E3248D3B6100C93F04 /* GradientView.swift */,
 				7F9B40E7248D3ED700C93F04 /* CustomButton.swift */,
+				7F2CA7DB248EB12E0026D413 /* CustomUIView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 				7F9B40D52489174D00C93F04 /* Extension.swift in Sources */,
 				7F9B40C0248263EB00C93F04 /* User.swift in Sources */,
 				7F9B40BC24825E1A00C93F04 /* BaseViewController.swift in Sources */,
+				7F2CA7DC248EB12E0026D413 /* CustomUIView.swift in Sources */,
 				7F9B40BA2482475F00C93F04 /* HomeViewController.swift in Sources */,
 				7F9B40C42482649B00C93F04 /* UserCell.swift in Sources */,
 				7F9B40D22488EED800C93F04 /* HomeMessageCell.swift in Sources */,

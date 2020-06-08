@@ -12,6 +12,11 @@ import FirebaseAuth
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeMessageTableView: UITableView!
+    @IBOutlet weak var emailTextField: UILabel!
+    @IBOutlet weak var userNameTextField: UILabel!
+    @IBOutlet weak var userProfileImageview: UIImageView!
+    @IBOutlet weak var nameBox: UIView!
+    @IBOutlet weak var userInfoView: UIView!
 
     var messages = [Message]()
     var messagesDictionary: [String : Message] = [:]
@@ -26,14 +31,36 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setupUI()
+        setupNavBar()
         checkUserLoggedIn()
+    }
+    
+    fileprivate func setupUI() {
+        userProfileImageview.maskCircle()
+        nameBox.layer.cornerRadius = 7
+    }
+    
+    fileprivate func setupNavBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    fileprivate func updateUserUI(user: User) {
+        if let profileImageURL = user.profileImageUrl {
+            userProfileImageview.kf.setImage(with: profileImageURL)
+        }
+        
+        userNameTextField.text = user.name
+        emailTextField.text = user.email
     }
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         perform(#selector(self.handleLogout))
     }
     
-    @IBAction func addNewMessagePressed(_ sender: UIBarButtonItem) {
+    @IBAction func addNewMessagePressed(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(identifier: Constant.VCID.newMessage) as! NewMessageViewController
         vc.delegate = self
         present(vc, animated: true, completion: nil)
@@ -45,7 +72,7 @@ class HomeViewController: UIViewController {
         self.homeMessageTableView.reloadData()
         FirebaseService.getUserInfo(with: Auth.auth().currentUser!.uid) { (user) in
             guard let user = user else { return }
-            self.navigationItem.title = user.name
+            self.updateUserUI(user: user)
             self.observeNewMessages()
         } // end get user
     }
@@ -113,6 +140,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homeMessageTableView.dequeueReusableCell(withIdentifier: Constant.TBID.homeMessageCeell, for: indexPath) as! HomeMessageCell
         cell.message = messages[indexPath.row]
+        cell.layer.backgroundColor = UIColor.clear.cgColor
         return cell
     }
     

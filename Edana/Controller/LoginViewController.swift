@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var emailView: UIView!
+    @IBOutlet weak var signUpButton: UIButton!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
         emailView.layer.cornerRadius = 5
         passwordView.layer.cornerRadius = 5
         loginButton.layer.cornerRadius = 8
+        signUpButton.layer.cornerRadius = 4
     }
     
     

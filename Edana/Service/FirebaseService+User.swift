@@ -103,7 +103,7 @@ struct FirebaseService {
                         let user = User(
                             id: key,
                             name: userDict[Constant.DBKey.name] as! String,
-                            email: userDict[Constant.DBKey.email]! as! String as! String,
+                            email: userDict[Constant.DBKey.email]! as! String,
                             profileImageUrl: URL(string: userDict[Constant.DBKey.profileImageUrl]! as! String))
                         userList.append(user)
                     }
