@@ -11,6 +11,7 @@ import UIKit
 class ChatCell: UITableViewCell {
     
     @IBOutlet weak var textContentLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var chatBackgroundView: UIView!
     
     var message: Message? {
@@ -21,17 +22,19 @@ class ChatCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        chatBackgroundView.layer.cornerRadius = 7.0
     }
     
     func updateUI() {
         if let msg = message {
             textContentLabel.text = msg.text!
-            if msg.senderID == msg.chatPartnerID() {
-                chatBackgroundView.backgroundColor = UIColor.blue
-            } else {
-                chatBackgroundView.backgroundColor = UIColor.gray
-            }
+            
+            // time handling
+            let timestampDate = Date(timeIntervalSince1970: TimeInterval(self.message!.timestamp))
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm a"
+            self.timeLabel.text = "\(dateFormatter.string(from: timestampDate))"
         }
     }
     

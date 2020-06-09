@@ -11,14 +11,10 @@ import UIKit
 extension UIImageView {
     func maskCircle() {
         self.contentMode = UIView.ContentMode.scaleAspectFill
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor(named: "Green")?.cgColor
         self.layer.cornerRadius = self.frame.height / 2
         self.layer.masksToBounds = false
         self.clipsToBounds = true
     }
-    
-    
 }
 
 
@@ -28,5 +24,18 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
+    }
+}
+
+
+extension UIViewController {
+    func dismissKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.handleDismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleDismissKeyboard() {
+        view.endEditing(true)
     }
 }

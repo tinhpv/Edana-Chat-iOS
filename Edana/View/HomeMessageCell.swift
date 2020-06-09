@@ -45,7 +45,7 @@ class HomeMessageCell: UITableViewCell {
                 let timestampDate = Date(timeIntervalSince1970: TimeInterval(self.message!.timestamp))
                 
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "HH:mm:ss a"
+                dateFormatter.dateFormat = "HH:mm a"
                 self.timeLabel.text = "\(dateFormatter.string(from: timestampDate))"
             }
         } // end firebase service

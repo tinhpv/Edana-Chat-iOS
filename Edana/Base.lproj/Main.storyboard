@@ -149,26 +149,26 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-B6-rPS">
-                                <rect key="frame" x="140.5" y="561" width="133" height="36"/>
+                                <rect key="frame" x="142.5" y="561" width="129" height="32"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                                 <state key="normal" title="Forgot password">
                                     <color key="titleColor" name="DarkBlue"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...or sign in with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyQ-38-3Pq">
-                                <rect key="frame" x="147.5" y="635" width="119.5" height="23.5"/>
+                                <rect key="frame" x="147" y="631" width="120" height="20"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" name="DarkGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iu-Or-VF0">
-                                <rect key="frame" x="163" y="826" width="144" height="19.5"/>
+                                <rect key="frame" x="165.5" y="827.5" width="141.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y85-Q1-7q9" userLabel="social_buttons">
-                                <rect key="frame" x="58" y="674" width="298" height="39"/>
+                                <rect key="frame" x="58" y="666.5" width="298" height="39"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb_button" translatesAutoresizingMaskIntoConstraints="NO" id="l3x-wO-l3a">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="39"/>
@@ -396,7 +396,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zva-2p-ef7" userLabel="social">
-                                <rect key="frame" x="58" y="699" width="298" height="39"/>
+                                <rect key="frame" x="58" y="696" width="298" height="39"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb_button" translatesAutoresizingMaskIntoConstraints="NO" id="Kdr-vn-pXD">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="39"/>
@@ -410,16 +410,16 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...or sign up with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETU-6N-6Zi">
-                                <rect key="frame" x="155.5" y="669" width="103.5" height="19.5"/>
+                                <rect key="frame" x="155" y="669" width="104" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
                                 <color key="textColor" name="DarkGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ff1-aj-wV0" userLabel="bottom">
-                                <rect key="frame" x="50" y="838" width="314" height="14"/>
+                                <rect key="frame" x="50" y="835" width="314" height="17"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7c-30-IOK">
-                                        <rect key="frame" x="230" y="-9.5" width="70" height="33"/>
+                                        <rect key="frame" x="230" y="-8" width="70" height="33"/>
                                         <color key="backgroundColor" name="LightBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="IBj-kB-ZWR"/>
@@ -434,7 +434,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNO-5v-IYw">
-                                        <rect key="frame" x="32" y="-4" width="183" height="22"/>
+                                        <rect key="frame" x="32" y="-1" width="185.5" height="19"/>
                                         <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>
@@ -501,31 +501,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69x-ar-oBC">
-                                <rect key="frame" x="0.0" y="809" width="414" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Art-pf-YoK" userLabel="top_parner_info">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-6v-5od">
-                                        <rect key="frame" x="22" y="13" width="308" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-yO-czm">
-                                        <rect key="frame" x="347" y="15" width="36" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Send"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yct-hl-CLa">
+                                        <rect key="frame" x="57" y="56" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="McF-As-NZv"/>
+                                            <constraint firstAttribute="width" constant="50" id="Pdf-pw-sNQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Name&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neN-pI-nvq">
+                                        <rect key="frame" x="120" y="70" width="227" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="19"/>
+                                        <color key="textColor" name="DarkBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKR-aC-gLf">
+                                        <rect key="frame" x="360" y="64" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="2br-je-KZl"/>
+                                            <constraint firstAttribute="height" constant="34" id="qyw-lW-Bcd"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_call"/>
                                         <connections>
-                                            <action selector="sendMsgPressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="3aY-3b-b4j"/>
+                                            <action selector="callPressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="0Bp-DP-GcS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hY-yK-6eH">
+                                        <rect key="frame" x="20" y="65" width="20" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="1Wl-ZR-Uyz"/>
+                                            <constraint firstAttribute="height" constant="32" id="Lho-3H-XkE"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_back"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="vDg-FA-yli"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-9Q-jnZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="757"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="lKR-aC-gLf" firstAttribute="centerY" secondItem="Yct-hl-CLa" secondAttribute="centerY" id="19V-2t-tQu"/>
+                                    <constraint firstItem="3hY-yK-6eH" firstAttribute="leading" secondItem="Art-pf-YoK" secondAttribute="leading" constant="20" id="2TR-hW-0Ug"/>
+                                    <constraint firstItem="Yct-hl-CLa" firstAttribute="leading" secondItem="3hY-yK-6eH" secondAttribute="trailing" constant="17" id="6HW-Ip-MEY"/>
+                                    <constraint firstItem="neN-pI-nvq" firstAttribute="leading" secondItem="Yct-hl-CLa" secondAttribute="trailing" constant="13" id="L5r-iK-iE5"/>
+                                    <constraint firstAttribute="bottom" secondItem="3hY-yK-6eH" secondAttribute="bottom" constant="20" id="ME0-Ny-QAe"/>
+                                    <constraint firstAttribute="trailing" secondItem="lKR-aC-gLf" secondAttribute="trailing" constant="20" id="PVz-1l-r84"/>
+                                    <constraint firstItem="Yct-hl-CLa" firstAttribute="centerY" secondItem="3hY-yK-6eH" secondAttribute="centerY" id="dSl-JU-icY"/>
+                                    <constraint firstItem="neN-pI-nvq" firstAttribute="centerY" secondItem="Yct-hl-CLa" secondAttribute="centerY" id="en4-lB-U72"/>
+                                    <constraint firstItem="lKR-aC-gLf" firstAttribute="leading" secondItem="neN-pI-nvq" secondAttribute="trailing" constant="13" id="miO-t8-NgY"/>
+                                    <constraint firstAttribute="height" constant="117" id="znc-Iu-hYb"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-9Q-jnZ">
+                                <rect key="frame" x="0.0" y="125" width="414" height="670"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chat_cell" rowHeight="106" id="Uwc-ui-Eo0">
                                         <rect key="frame" x="0.0" y="28" width="414" height="106"/>
@@ -534,16 +565,84 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="partner_chat_cell" rowHeight="98" id="TFl-Qa-9tA">
+                                        <rect key="frame" x="0.0" y="134" width="414" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TFl-Qa-9tA" id="go9-Jc-bFi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69x-ar-oBC" userLabel="bottom">
+                                <rect key="frame" x="20" y="803" width="374" height="54"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-jc-vYL" userLabel="chat_input">
+                                        <rect key="frame" x="0.0" y="1" width="374" height="52"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-6v-5od">
+                                                <rect key="frame" x="30" y="0.0" width="324" height="52"/>
+                                                <color key="textColor" name="DarkBlue"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" name="White"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dqi-6v-5od" secondAttribute="bottom" id="L1H-9Y-HPb"/>
+                                            <constraint firstItem="dqi-6v-5od" firstAttribute="leading" secondItem="fnC-jc-vYL" secondAttribute="leading" constant="30" id="Mgu-5l-Ign"/>
+                                            <constraint firstItem="dqi-6v-5od" firstAttribute="top" secondItem="fnC-jc-vYL" secondAttribute="top" id="Q7Q-EM-L8n"/>
+                                            <constraint firstAttribute="trailing" secondItem="dqi-6v-5od" secondAttribute="trailing" constant="20" id="UpW-3z-PQ7"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-yO-czm">
+                                        <rect key="frame" x="320" y="0.0" width="54" height="54"/>
+                                        <state key="normal" image="ic_send_msg"/>
+                                        <connections>
+                                            <action selector="sendMsgPressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="3aY-3b-b4j"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Dbi-LU-UIf"/>
+                                    <constraint firstItem="dMN-yO-czm" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" id="Or7-iq-kWb"/>
+                                    <constraint firstItem="fnC-jc-vYL" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" constant="1" id="QJh-Uc-zFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="fnC-jc-vYL" secondAttribute="trailing" id="aJp-pZ-6V4"/>
+                                    <constraint firstItem="fnC-jc-vYL" firstAttribute="leading" secondItem="69x-ar-oBC" secondAttribute="leading" id="fEp-Ug-TsI"/>
+                                    <constraint firstAttribute="trailing" secondItem="dMN-yO-czm" secondAttribute="trailing" id="ghL-Zx-hCS"/>
+                                    <constraint firstAttribute="bottom" secondItem="dMN-yO-czm" secondAttribute="bottom" id="hhL-dx-8aH"/>
+                                    <constraint firstAttribute="bottom" secondItem="fnC-jc-vYL" secondAttribute="bottom" constant="1" id="iCT-pD-Ubn"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="LightGray"/>
+                        <constraints>
+                            <constraint firstItem="Uj7-9Q-jnZ" firstAttribute="top" secondItem="Art-pf-YoK" secondAttribute="bottom" constant="8" id="22s-RM-SNb"/>
+                            <constraint firstItem="Art-pf-YoK" firstAttribute="top" secondItem="TrW-Bs-DSD" secondAttribute="top" id="2lt-Tf-WWv"/>
+                            <constraint firstItem="69x-ar-oBC" firstAttribute="top" secondItem="Uj7-9Q-jnZ" secondAttribute="bottom" constant="8" id="6Yx-Ra-nX4"/>
+                            <constraint firstItem="Art-pf-YoK" firstAttribute="leading" secondItem="T4U-GN-fcq" secondAttribute="leading" id="9Ws-3F-CoU"/>
+                            <constraint firstItem="T4U-GN-fcq" firstAttribute="bottom" secondItem="69x-ar-oBC" secondAttribute="bottom" constant="5" id="9ko-kn-bZP"/>
+                            <constraint firstItem="Uj7-9Q-jnZ" firstAttribute="leading" secondItem="T4U-GN-fcq" secondAttribute="leading" id="Awr-Q6-5Uy"/>
+                            <constraint firstItem="Uj7-9Q-jnZ" firstAttribute="trailing" secondItem="T4U-GN-fcq" secondAttribute="trailing" id="ck6-Pe-jh7"/>
+                            <constraint firstItem="Art-pf-YoK" firstAttribute="trailing" secondItem="T4U-GN-fcq" secondAttribute="trailing" id="dfj-ZO-rAE"/>
+                            <constraint firstItem="T4U-GN-fcq" firstAttribute="trailing" secondItem="69x-ar-oBC" secondAttribute="trailing" constant="20" id="wI6-FR-72K"/>
+                            <constraint firstItem="69x-ar-oBC" firstAttribute="leading" secondItem="T4U-GN-fcq" secondAttribute="leading" constant="20" id="ymw-eY-9vc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="T4U-GN-fcq"/>
                     </view>
                     <connections>
+                        <outlet property="chatInputView" destination="fnC-jc-vYL" id="ZZi-f7-4um"/>
                         <outlet property="chatTextField" destination="dqi-6v-5od" id="mfC-SD-rCD"/>
                         <outlet property="chatlogTableView" destination="Uj7-9Q-jnZ" id="lLY-WE-eZR"/>
+                        <outlet property="chatlogTableViewBottomConstraint" destination="6Yx-Ra-nX4" id="QvA-NS-yHx"/>
+                        <outlet property="inputViewBottomConstraint" destination="9ko-kn-bZP" id="OC9-10-Kxt"/>
+                        <outlet property="partnerNameLabel" destination="neN-pI-nvq" id="4Xq-om-q1a"/>
+                        <outlet property="partnerProfileImage" destination="Yct-hl-CLa" id="gdF-sE-MMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUe-4a-pjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -587,11 +686,11 @@
                                         <rect key="frame" x="102" y="112" width="241" height="55"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiH-vG-icp" userLabel="name">
-                                                <rect key="frame" x="0.0" y="0.0" width="116.5" height="27.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="26.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phan Vu Tinh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDQ-VS-ldq">
-                                                        <rect key="frame" x="5" y="2" width="106.5" height="23.5"/>
-                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
+                                                        <rect key="frame" x="5" y="2" width="112" height="22.5"/>
+                                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="19"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -605,7 +704,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vutinh.phan@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOa-ev-53g">
-                                                <rect key="frame" x="0.0" y="32.5" width="139" height="18"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="139" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
@@ -706,43 +805,79 @@
             <point key="canvasLocation" x="976.81159420289862" y="77.678571428571431"/>
         </scene>
         <!--New Message View Controller-->
-        <scene sceneID="JJU-ik-Ltw">
+        <scene sceneID="ywC-1I-d09">
             <objects>
-                <tableViewController storyboardIdentifier="new_message" id="Ok1-sb-9mI" customClass="NewMessageViewController" customModule="Edana" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kn7-Bb-egb">
+                <viewController storyboardIdentifier="new_message" id="4hH-Mh-j6T" customClass="NewMessageViewController" customModule="Edana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYi-JX-RSh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dx4-aH-Kaz">
+                                <rect key="frame" x="0.0" y="93" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="user_cell" rowHeight="89" id="vdg-ow-2fh" customClass="UserCell" customModule="Edana" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdg-ow-2fh" id="SD5-jh-0Vg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w28-bl-Ts2">
+                                <rect key="frame" x="30" y="58" width="58" height="35"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="19"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" name="DarkBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="4hH-Mh-j6T" eventType="touchUpInside" id="Ofy-iv-5E4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNd-w2-KoQ">
+                                <rect key="frame" x="142" y="64" width="130" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="19"/>
+                                <color key="textColor" name="DarkBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="user_cell" id="F7T-oZ-Ox9" customClass="UserCell" customModule="Edana" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F7T-oZ-Ox9" id="sqw-y8-Ly0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ok1-sb-9mI" id="457-jK-eK3"/>
-                            <outlet property="delegate" destination="Ok1-sb-9mI" id="lnq-K1-waB"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X2F-3w-XpJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="dx4-aH-Kaz" firstAttribute="leading" secondItem="3Vy-x8-Evd" secondAttribute="leading" id="2Ly-5m-ubi"/>
+                            <constraint firstItem="3Vy-x8-Evd" firstAttribute="bottom" secondItem="dx4-aH-Kaz" secondAttribute="bottom" id="9sh-j2-Hmv"/>
+                            <constraint firstItem="JNd-w2-KoQ" firstAttribute="centerX" secondItem="YYi-JX-RSh" secondAttribute="centerX" id="DR2-0Q-sgq"/>
+                            <constraint firstItem="w28-bl-Ts2" firstAttribute="leading" secondItem="3Vy-x8-Evd" secondAttribute="leading" constant="30" id="STl-1v-3nQ"/>
+                            <constraint firstItem="dx4-aH-Kaz" firstAttribute="trailing" secondItem="3Vy-x8-Evd" secondAttribute="trailing" id="Wmt-dX-iSm"/>
+                            <constraint firstItem="w28-bl-Ts2" firstAttribute="centerY" secondItem="JNd-w2-KoQ" secondAttribute="centerY" id="cVG-3F-Dbx"/>
+                            <constraint firstItem="JNd-w2-KoQ" firstAttribute="top" secondItem="3Vy-x8-Evd" secondAttribute="top" constant="20" id="nAe-uF-f0Q"/>
+                            <constraint firstItem="JNd-w2-KoQ" firstAttribute="leading" secondItem="w28-bl-Ts2" secondAttribute="trailing" constant="54" id="nca-A4-Nst"/>
+                            <constraint firstItem="dx4-aH-Kaz" firstAttribute="top" secondItem="w28-bl-Ts2" secondAttribute="bottom" id="sHy-e7-FF1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Vy-x8-Evd"/>
+                    </view>
+                    <connections>
+                        <outlet property="userTableView" destination="dx4-aH-Kaz" id="7xv-F0-wNs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmu-un-LGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="78"/>
+            <point key="canvasLocation" x="1739" y="78"/>
         </scene>
     </scenes>
     <resources>
         <image name="fb_button" width="144" height="39"/>
         <image name="footer" width="128" height="88"/>
         <image name="gg_button" width="144" height="39"/>
+        <image name="ic_back" width="10" height="17"/>
+        <image name="ic_call" width="34" height="34"/>
         <image name="ic_email" width="20" height="16"/>
         <image name="ic_name" width="18" height="20"/>
         <image name="ic_new_msg" width="34" height="34"/>
         <image name="ic_password" width="20" height="20"/>
         <image name="ic_repeat" width="18" height="12"/>
+        <image name="ic_send_msg" width="54" height="54"/>
         <image name="left_header" width="70" height="49"/>
         <image name="logo" width="180" height="191"/>
         <image name="logo_text_big" width="134" height="37"/>

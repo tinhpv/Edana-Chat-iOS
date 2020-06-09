@@ -26,27 +26,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGj-ai-T7j">
-                        <rect key="frame" x="27" y="5" width="266" height="75"/>
+                        <rect key="frame" x="20" y="5" width="280" height="75"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[msg]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-EN-8iZ">
-                                <rect key="frame" x="97" y="34.5" width="39.5" height="19"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="16"/>
+                                <rect key="frame" x="88" y="38.5" width="42" height="20"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-Jt-N1K">
-                                <rect key="frame" x="25" y="7.5" width="60" height="60"/>
+                                <rect key="frame" x="20" y="9.5" width="56" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Rwp-BE-K56"/>
-                                    <constraint firstAttribute="width" constant="60" id="dPG-Ex-VOo"/>
+                                    <constraint firstAttribute="height" constant="56" id="Rwp-BE-K56"/>
+                                    <constraint firstAttribute="width" constant="56" id="dPG-Ex-VOo"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3t-zI-n8E" userLabel="name_view">
-                                <rect key="frame" x="97" y="7.5" width="109.5" height="23"/>
+                                <rect key="frame" x="88" y="9.5" width="121" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[friend name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-G0-H6X">
-                                        <rect key="frame" x="8" y="2" width="93.5" height="19"/>
-                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="16"/>
+                                        <rect key="frame" x="8" y="2" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -60,8 +60,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[time]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbK-at-xBD">
-                                <rect key="frame" x="216.5" y="12" width="29.5" height="14"/>
-                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="12"/>
+                                <rect key="frame" x="233" y="15.5" width="27" height="13"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="11"/>
                                 <color key="textColor" name="DarkGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -74,17 +74,18 @@
                             <constraint firstItem="VbK-at-xBD" firstAttribute="centerY" secondItem="R3t-zI-n8E" secondAttribute="centerY" id="Zq8-cj-CaU"/>
                             <constraint firstItem="bBN-EN-8iZ" firstAttribute="leading" secondItem="R3t-zI-n8E" secondAttribute="leading" id="c5W-O7-BX4"/>
                             <constraint firstItem="bBN-EN-8iZ" firstAttribute="top" secondItem="R3t-zI-n8E" secondAttribute="bottom" constant="4" id="csb-fv-aos"/>
-                            <constraint firstItem="umQ-Jt-N1K" firstAttribute="leading" secondItem="PGj-ai-T7j" secondAttribute="leading" constant="25" id="eql-uB-pZ4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bBN-EN-8iZ" secondAttribute="trailing" constant="25" id="dzb-jd-8US"/>
+                            <constraint firstItem="umQ-Jt-N1K" firstAttribute="leading" secondItem="PGj-ai-T7j" secondAttribute="leading" constant="20" id="eql-uB-pZ4"/>
                             <constraint firstItem="umQ-Jt-N1K" firstAttribute="centerY" secondItem="PGj-ai-T7j" secondAttribute="centerY" id="wIo-8d-oq4"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="PGj-ai-T7j" secondAttribute="trailing" constant="27" id="KYh-WB-R5m"/>
+                    <constraint firstAttribute="trailing" secondItem="PGj-ai-T7j" secondAttribute="trailing" constant="20" id="KYh-WB-R5m"/>
                     <constraint firstItem="PGj-ai-T7j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ur6-fD-vFT"/>
                     <constraint firstAttribute="bottom" secondItem="PGj-ai-T7j" secondAttribute="bottom" constant="5" id="Zuq-w7-dez"/>
-                    <constraint firstItem="PGj-ai-T7j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="tF0-Fr-ieO"/>
+                    <constraint firstItem="PGj-ai-T7j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="tF0-Fr-ieO"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -110,7 +111,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Yellow">
-            <color red="0.9882352941176471" green="0.90196078431372551" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98799997568130493" green="0.90200001001358032" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
