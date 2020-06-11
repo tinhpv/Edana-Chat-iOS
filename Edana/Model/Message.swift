@@ -14,6 +14,9 @@ struct Message {
     let receiverID: String
     let timestamp: Int
     let text: String?
+    let imageUrl: String?
+    let imageWidth: CGFloat?
+    let imageHeight: CGFloat?
     
     func chatPartnerID() -> String? {
         return Auth.auth().currentUser?.uid == receiverID ? senderID : receiverID

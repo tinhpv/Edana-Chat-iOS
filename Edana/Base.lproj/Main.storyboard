@@ -14,6 +14,9 @@
         <array key="Nunito-Regular.ttf">
             <string>Nunito-Regular</string>
         </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
@@ -555,7 +558,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-9Q-jnZ">
-                                <rect key="frame" x="0.0" y="125" width="414" height="670"/>
+                                <rect key="frame" x="0.0" y="125" width="414" height="664"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chat_cell" rowHeight="106" id="Uwc-ui-Eo0">
@@ -579,44 +582,61 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69x-ar-oBC" userLabel="bottom">
-                                <rect key="frame" x="20" y="803" width="374" height="54"/>
+                                <rect key="frame" x="20" y="801" width="374" height="54"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnC-jc-vYL" userLabel="chat_input">
-                                        <rect key="frame" x="0.0" y="1" width="374" height="52"/>
+                                        <rect key="frame" x="56" y="3" width="318" height="48"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-6v-5od">
-                                                <rect key="frame" x="30" y="0.0" width="324" height="52"/>
+                                                <rect key="frame" x="17" y="0.0" width="231" height="48"/>
                                                 <color key="textColor" name="DarkBlue"/>
-                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" name="White"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="dqi-6v-5od" secondAttribute="bottom" id="L1H-9Y-HPb"/>
-                                            <constraint firstItem="dqi-6v-5od" firstAttribute="leading" secondItem="fnC-jc-vYL" secondAttribute="leading" constant="30" id="Mgu-5l-Ign"/>
-                                            <constraint firstItem="dqi-6v-5od" firstAttribute="top" secondItem="fnC-jc-vYL" secondAttribute="top" id="Q7Q-EM-L8n"/>
-                                            <constraint firstAttribute="trailing" secondItem="dqi-6v-5od" secondAttribute="trailing" constant="20" id="UpW-3z-PQ7"/>
+                                            <constraint firstItem="dqi-6v-5od" firstAttribute="top" secondItem="fnC-jc-vYL" secondAttribute="top" id="4fo-0L-Jav"/>
+                                            <constraint firstAttribute="trailing" secondItem="dqi-6v-5od" secondAttribute="trailing" constant="70" id="H1D-he-rln"/>
+                                            <constraint firstItem="dqi-6v-5od" firstAttribute="leading" secondItem="fnC-jc-vYL" secondAttribute="leading" constant="17" id="Qa2-wv-0fi"/>
+                                            <constraint firstAttribute="bottom" secondItem="dqi-6v-5od" secondAttribute="bottom" id="uAz-7e-Ewp"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-yO-czm">
-                                        <rect key="frame" x="320" y="0.0" width="54" height="54"/>
+                                        <rect key="frame" x="322" y="1" width="52" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="2TC-ux-nVr"/>
+                                            <constraint firstAttribute="width" constant="52" id="AhJ-cf-eNY"/>
+                                        </constraints>
                                         <state key="normal" image="ic_send_msg"/>
                                         <connections>
                                             <action selector="sendMsgPressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="3aY-3b-b4j"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CE5-Dm-qQD">
+                                        <rect key="frame" x="8" y="9" width="40" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="NIs-YW-8T2"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_upload_img"/>
+                                        <connections>
+                                            <action selector="sendImagePressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="8i7-Ke-Bmw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="CE5-Dm-qQD" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" constant="9" id="1Dm-n2-eWo"/>
+                                    <constraint firstAttribute="trailing" secondItem="dMN-yO-czm" secondAttribute="trailing" id="62R-ci-hsW"/>
                                     <constraint firstAttribute="height" constant="54" id="Dbi-LU-UIf"/>
-                                    <constraint firstItem="dMN-yO-czm" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" id="Or7-iq-kWb"/>
-                                    <constraint firstItem="fnC-jc-vYL" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" constant="1" id="QJh-Uc-zFi"/>
+                                    <constraint firstItem="fnC-jc-vYL" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" constant="3" id="QJh-Uc-zFi"/>
                                     <constraint firstAttribute="trailing" secondItem="fnC-jc-vYL" secondAttribute="trailing" id="aJp-pZ-6V4"/>
-                                    <constraint firstItem="fnC-jc-vYL" firstAttribute="leading" secondItem="69x-ar-oBC" secondAttribute="leading" id="fEp-Ug-TsI"/>
-                                    <constraint firstAttribute="trailing" secondItem="dMN-yO-czm" secondAttribute="trailing" id="ghL-Zx-hCS"/>
-                                    <constraint firstAttribute="bottom" secondItem="dMN-yO-czm" secondAttribute="bottom" id="hhL-dx-8aH"/>
-                                    <constraint firstAttribute="bottom" secondItem="fnC-jc-vYL" secondAttribute="bottom" constant="1" id="iCT-pD-Ubn"/>
+                                    <constraint firstItem="fnC-jc-vYL" firstAttribute="leading" secondItem="CE5-Dm-qQD" secondAttribute="trailing" constant="8" id="ggi-nw-3ot"/>
+                                    <constraint firstAttribute="bottom" secondItem="fnC-jc-vYL" secondAttribute="bottom" constant="3" id="iCT-pD-Ubn"/>
+                                    <constraint firstAttribute="bottom" secondItem="CE5-Dm-qQD" secondAttribute="bottom" constant="9" id="lHE-v5-R2c"/>
+                                    <constraint firstItem="CE5-Dm-qQD" firstAttribute="leading" secondItem="69x-ar-oBC" secondAttribute="leading" constant="8" id="pAE-b1-38z"/>
+                                    <constraint firstItem="dMN-yO-czm" firstAttribute="top" secondItem="69x-ar-oBC" secondAttribute="top" constant="1" id="rQV-zC-dF0"/>
+                                    <constraint firstAttribute="bottom" secondItem="dMN-yO-czm" secondAttribute="bottom" constant="1" id="wQx-RP-8h3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -624,9 +644,9 @@
                         <constraints>
                             <constraint firstItem="Uj7-9Q-jnZ" firstAttribute="top" secondItem="Art-pf-YoK" secondAttribute="bottom" constant="8" id="22s-RM-SNb"/>
                             <constraint firstItem="Art-pf-YoK" firstAttribute="top" secondItem="TrW-Bs-DSD" secondAttribute="top" id="2lt-Tf-WWv"/>
-                            <constraint firstItem="69x-ar-oBC" firstAttribute="top" secondItem="Uj7-9Q-jnZ" secondAttribute="bottom" constant="8" id="6Yx-Ra-nX4"/>
+                            <constraint firstItem="69x-ar-oBC" firstAttribute="top" secondItem="Uj7-9Q-jnZ" secondAttribute="bottom" constant="12" id="6Yx-Ra-nX4"/>
                             <constraint firstItem="Art-pf-YoK" firstAttribute="leading" secondItem="T4U-GN-fcq" secondAttribute="leading" id="9Ws-3F-CoU"/>
-                            <constraint firstItem="T4U-GN-fcq" firstAttribute="bottom" secondItem="69x-ar-oBC" secondAttribute="bottom" constant="5" id="9ko-kn-bZP"/>
+                            <constraint firstItem="T4U-GN-fcq" firstAttribute="bottom" secondItem="69x-ar-oBC" secondAttribute="bottom" constant="7" id="9ko-kn-bZP"/>
                             <constraint firstItem="Uj7-9Q-jnZ" firstAttribute="leading" secondItem="T4U-GN-fcq" secondAttribute="leading" id="Awr-Q6-5Uy"/>
                             <constraint firstItem="Uj7-9Q-jnZ" firstAttribute="trailing" secondItem="T4U-GN-fcq" secondAttribute="trailing" id="ck6-Pe-jh7"/>
                             <constraint firstItem="Art-pf-YoK" firstAttribute="trailing" secondItem="T4U-GN-fcq" secondAttribute="trailing" id="dfj-ZO-rAE"/>
@@ -647,7 +667,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUe-4a-pjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863.7681159420292" y="843.75"/>
+            <point key="canvasLocation" x="1737.68115942029" y="843.75"/>
+        </scene>
+        <!--Image Viewer View Controller-->
+        <scene sceneID="rqj-ba-Fqi">
+            <objects>
+                <viewController storyboardIdentifier="zoom_image" modalPresentationStyle="overFullScreen" id="mLR-Yp-cet" customClass="ImageViewerViewController" customModule="Edana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hP1-xm-6Un">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pi-ny-JGU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGn-6d-cOQ" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mef-ma-pIv">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="mef-ma-pIv" firstAttribute="leading" secondItem="rGn-6d-cOQ" secondAttribute="leading" id="34f-bk-2Hx"/>
+                                            <constraint firstItem="mef-ma-pIv" firstAttribute="top" secondItem="rGn-6d-cOQ" secondAttribute="top" id="XAV-cm-309"/>
+                                            <constraint firstAttribute="bottom" secondItem="mef-ma-pIv" secondAttribute="bottom" id="Yo8-7o-eiS"/>
+                                            <constraint firstAttribute="height" constant="896" id="cId-Zn-g1I"/>
+                                            <constraint firstAttribute="trailing" secondItem="mef-ma-pIv" secondAttribute="trailing" id="oug-dM-HPU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="rGn-6d-cOQ" firstAttribute="top" secondItem="oop-tl-Vjj" secondAttribute="top" id="3Bb-ec-FAA"/>
+                                    <constraint firstItem="rGn-6d-cOQ" firstAttribute="leading" secondItem="oop-tl-Vjj" secondAttribute="leading" id="9X0-RQ-Dqb"/>
+                                    <constraint firstItem="oop-tl-Vjj" firstAttribute="trailing" secondItem="rGn-6d-cOQ" secondAttribute="trailing" constant="-414" id="Hhs-8P-lDL"/>
+                                    <constraint firstItem="oop-tl-Vjj" firstAttribute="bottom" secondItem="rGn-6d-cOQ" secondAttribute="bottom" constant="-896" id="eRB-dL-dmD"/>
+                                    <constraint firstItem="rGn-6d-cOQ" firstAttribute="width" secondItem="aUx-pV-oJh" secondAttribute="width" id="qpF-sm-HvF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="oop-tl-Vjj"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="aUx-pV-oJh"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-BF-ysv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqX-UD-bzd">
+                                        <rect key="frame" x="346" y="62" width="43" height="33"/>
+                                        <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="18"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" name="DarkBlue"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="mLR-Yp-cet" eventType="touchUpInside" id="xVZ-SG-aWn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SqX-UD-bzd" secondAttribute="trailing" constant="25" id="Sl2-DH-bTp"/>
+                                    <constraint firstAttribute="bottom" secondItem="SqX-UD-bzd" secondAttribute="bottom" constant="5" id="e6o-gy-YZe"/>
+                                    <constraint firstAttribute="height" constant="100" id="y7s-ug-2zW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="2Pi-ny-JGU" firstAttribute="trailing" secondItem="pvn-SO-LeZ" secondAttribute="trailing" id="1h6-aA-XeW"/>
+                            <constraint firstAttribute="bottom" secondItem="2Pi-ny-JGU" secondAttribute="bottom" id="F2D-wi-ce5"/>
+                            <constraint firstItem="Mbf-BF-ysv" firstAttribute="top" secondItem="hP1-xm-6Un" secondAttribute="top" id="JL3-dO-MJ3"/>
+                            <constraint firstItem="Mbf-BF-ysv" firstAttribute="leading" secondItem="pvn-SO-LeZ" secondAttribute="leading" id="PFL-id-od7"/>
+                            <constraint firstItem="Mbf-BF-ysv" firstAttribute="trailing" secondItem="pvn-SO-LeZ" secondAttribute="trailing" id="RPJ-LG-Q2N"/>
+                            <constraint firstItem="2Pi-ny-JGU" firstAttribute="leading" secondItem="pvn-SO-LeZ" secondAttribute="leading" id="cXQ-3c-4lk"/>
+                            <constraint firstItem="2Pi-ny-JGU" firstAttribute="top" secondItem="hP1-xm-6Un" secondAttribute="top" id="lA0-EE-WUD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pvn-SO-LeZ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="U7O-UO-Bus" appends="YES" id="z2j-Iy-TP7"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="2Pi-ny-JGU" id="FhC-Hs-C21"/>
+                        <outlet property="topView" destination="Mbf-BF-ysv" id="Zcz-5Z-Atg"/>
+                        <outlet property="zoomImageView" destination="mef-ma-pIv" id="3nH-LA-boL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fH5-00-9AO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="U7O-UO-Bus">
+                    <connections>
+                        <action selector="swipeDownDismissVC:" destination="mLR-Yp-cet" id="lyv-5f-Rhc"/>
+                        <outlet property="delegate" destination="mLR-Yp-cet" id="4tj-kK-17A"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2553.6231884057975" y="843.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dUD-F0-uU3">
@@ -878,6 +990,7 @@
         <image name="ic_password" width="20" height="20"/>
         <image name="ic_repeat" width="18" height="12"/>
         <image name="ic_send_msg" width="54" height="54"/>
+        <image name="ic_upload_img" width="26" height="18"/>
         <image name="left_header" width="70" height="49"/>
         <image name="logo" width="180" height="191"/>
         <image name="logo_text_big" width="134" height="37"/>

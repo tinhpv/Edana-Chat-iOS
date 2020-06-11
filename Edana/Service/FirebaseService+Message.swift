@@ -11,6 +11,28 @@ import FirebaseDatabase
 
 extension FirebaseService {
     
+    static func handleSaveImageMessage(imageUrl: String, imgWidth: CGFloat, imgHeight: CGFloat, fromID: String, toID: String, completion: @escaping (String?) -> Void) {
+        let timestamp = Int(Date().timeIntervalSince1970)
+        let msgData = [Constant.DBKey.fromID: fromID,
+                       Constant.DBKey.toID: toID,
+                       Constant.DBKey.time: timestamp,
+                       Constant.DBKey.imageURL: imageUrl,
+                       Constant.DBKey.imageWidth: imgWidth,
+                       Constant.DBKey.imageHeight: imgHeight] as [String : Any]
+        
+        let dbReference = Database.database().reference().child(Constant.DBKey.messages).childByAutoId()
+        dbReference.setValue(msgData) { (error, dbRef) in
+            if error != nil {
+                completion(error?.localizedDescription)
+            } else {
+                let db = Database.database().reference()
+                db.child(Constant.DBKey.chatlog).child(fromID).child(toID).updateChildValues([dbReference.key! : 1])
+                db.child(Constant.DBKey.chatlog).child(toID).child(fromID).updateChildValues([dbReference.key! : 1])
+                completion(nil)
+            }
+        } // end setvalue
+    }
+    
     static func handleSaveTextMessage(content: String, fromID: String, toID: String, completion: @escaping (String?) -> Void) {
         let timestamp = Int(Date().timeIntervalSince1970)
         let textData = [Constant.DBKey.text : content,
@@ -39,7 +61,10 @@ extension FirebaseService {
                 let receiverID = msgDict[Constant.DBKey.toID] as! String
                 let timestamp = msgDict[Constant.DBKey.time] as! Int
                 let text = msgDict[Constant.DBKey.text] as? String
-                let newMsg = Message(senderID: senderID, receiverID: receiverID, timestamp: timestamp, text: text)
+                let imageUrl = msgDict[Constant.DBKey.imageURL] as? String
+                let imgWidth = msgDict[Constant.DBKey.imageWidth] as? CGFloat
+                let imageHeight = msgDict[Constant.DBKey.imageHeight] as? CGFloat
+                let newMsg = Message(senderID: senderID, receiverID: receiverID, timestamp: timestamp, text: text, imageUrl: imageUrl, imageWidth: imgWidth, imageHeight: imageHeight)
                 completion(newMsg)
             } else {
                 completion(nil)

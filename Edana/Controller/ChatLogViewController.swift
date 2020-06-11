@@ -30,6 +30,8 @@ class ChatLogViewController: UIViewController {
     }
     
     let fromUser = Auth.auth().currentUser
+    
+    let photoPicker = PhotoPicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,48 +54,46 @@ class ChatLogViewController: UIViewController {
     
     @objc func handleKeyboardShowingUp(_ notification: Notification) {
         guard let userInfo = (notification as Notification).userInfo,
-            let value = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect,
+            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
         let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        
+        let keyboardHeight = keyboardFrame.cgRectValue.size.height
         
         let newHeight: CGFloat
         if #available(iOS 11.0, *) {
-            newHeight = value.height - view.safeAreaInsets.bottom + 5
+            newHeight = keyboardHeight - view.safeAreaInsets.bottom + 7
         } else {
-            newHeight = value.height
+            newHeight = keyboardHeight
         }
         
-        inputViewBottomConstraint.constant = newHeight
-        UIView.animate(withDuration: duration) {
+        self.inputViewBottomConstraint.constant == 7 ? (self.inputViewBottomConstraint.constant = newHeight) : (self.inputViewBottomConstraint.constant = 7)
+        
+        UIView.animate(withDuration: duration, animations: {
             self.view.layoutIfNeeded()
-        }
+        })
     }
     
-    @objc func handleKeyboardHiding(notification: Notification) {
-        guard let userInfo = (notification as Notification).userInfo,
-        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func handleDismissKeyboard() {
         
-        inputViewBottomConstraint.constant = 5
-        UIView.animate(withDuration: duration) {
-            self.view.layoutIfNeeded()
-        }
-        
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        chatlogTableView.addGestureRecognizer(tap)
     }
     
     fileprivate func setupKeyboard() {
+        handleDismissKeyboard()
         
-        self.dismissKeyboard()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardShowingUp), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardHiding), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardShowingUp), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     fileprivate func setupUI() {
         self.navigationItem.hidesBackButton = true
         chatInputView.layer.cornerRadius = 25.0
         partnerProfileImage.maskCircle()
-        
         
         chatlogTableView.dataSource = self
         chatlogTableView.delegate = self
@@ -131,6 +131,20 @@ class ChatLogViewController: UIViewController {
         
     }
     
+    @IBAction func sendImagePressed(_ sender: UIButton) {
+        self.photoPicker.presentActionSheet(from: self)
+        self.photoPicker.completionHandler = { pickedImage in
+            FirebaseService.saveImage(in: Constant.DBKey.imageMsg, pickedImage) { (url) in
+                guard let url = url else { return }
+                FirebaseService.handleSaveImageMessage(imageUrl: url.absoluteString, imgWidth: pickedImage.size.width, imgHeight: pickedImage.size.height, fromID: self.fromUser!.uid, toID: self.toUser!.id) { (error) in
+                    if let error = error {
+                        print(error)
+                    }
+                } // end handle save image message
+            } // end upload image to firebase storage
+        } // end getting image
+    }
+    
     func loadAndObserveNewMessages() {
         FirebaseService.observeMessagesForSingleChatLog(currentUserID: fromUser!.uid, partnerID: toUser!.id) { (msg) in
             if let msg = msg {
@@ -147,6 +161,7 @@ class ChatLogViewController: UIViewController {
 }
 
 extension ChatLogViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
@@ -156,23 +171,29 @@ extension ChatLogViewController: UITableViewDataSource, UITableViewDelegate {
         if msg.chatPartnerID()! == msg.senderID {
             let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.partnerChatCell, for: indexPath)
                 as! PartnerMessageCell
-            cell.partner = toUser
             cell.message = self.messages[indexPath.row]
+            cell.delegate = self
             cell.layer.backgroundColor = UIColor.clear.cgColor
-            
-            if (indexPath.row - 1) >= 0 {
-                cell.previousMessage = messages[indexPath.row - 1]
-            }
             
             return cell
         } else {
             let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.chatCell, for: indexPath)
                 as! ChatCell
             cell.message = self.messages[indexPath.row]
+            cell.delegate = self
             cell.layer.backgroundColor = UIColor.clear.cgColor
             return cell
         }
     }
+}
 
+
+extension ChatLogViewController: ImageMessageDelegate {
+    func userTapped(on image: UIImage) {
+        let zoomVC = self.storyboard?.instantiateViewController(identifier: Constant.VCID.zoomVC) as! ImageViewerViewController
+        zoomVC.imageToZoom = image
+        present(zoomVC, animated: true, completion: nil)
+    }
+    
     
 }

@@ -24,33 +24,9 @@ struct FirebaseService {
         } // end Auth
     }
     
-    private static func saveImage(_ image: UIImage, _ completion: @escaping (URL?) -> Void) {
-        let storageRef = Storage.storage().reference()
-        .child("profile_images")
-        .child("\(UUID().uuidString)")
-        
-        if let imageData = image.jpegData(compressionQuality: 0.1) {
-            storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-                if let err = error {
-                    print(err.localizedDescription)
-                } else {
-                    storageRef.downloadURL { (url, error) in
-                        if let url = url {
-                            completion(url)
-                        } else {
-                            completion(nil)
-                        }
-                    } // end download
-                } // end checking error
-            } // end putData task
-        } // end if let data
-        
-        
-    }
-    
     static func handleCreateNewUser(email: String, password: String, name: String, profileImage: UIImage?, completion: @escaping (Error?) -> Void) {
         if let image = profileImage {
-            saveImage(image) { (url) in
+            saveImage(in: Constant.DBKey.profileImage, image) { (url) in
                 if let url = url {
                     Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                         if error != nil {

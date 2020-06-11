@@ -105,9 +105,10 @@ class HomeViewController: UIViewController {
                 self.messages = self.messages.sorted()
             }
             
+            
             // postpone to reload multiple times
             self.timer?.invalidate()
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.reloadTable), userInfo: nil, repeats: false)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.reloadTable), userInfo: nil, repeats: false)
         } // end observing
     }
     
@@ -145,7 +146,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return CGFloat(95)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -34,13 +34,23 @@ class HomeMessageCell: UITableViewCell {
 
     func updateUI() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let userToFetch = message!.senderID == uid ? message!.receiverID : message!.senderID
         
+        let userToFetch = message!.senderID == uid ? message!.receiverID : message!.senderID
         FirebaseService.getUserInfo(with: userToFetch) { (user) in
             if user != nil {
                 self.friendNameLabel.text = user?.name
                 self.friendProfileImageView.kf.setImage(with: user?.profileImageUrl)
-                self.messageLabel.text = self.message?.text
+                
+                if let textMsg = self.message?.text {
+                    self.messageLabel.text = textMsg
+                } else {
+                    if self.message?.senderID == userToFetch {
+                        self.messageLabel.text = "\(user!.name) sent an image"
+                    } else {
+                        self.messageLabel.text = "You sent an image"
+                    } // end handling image message
+                } // end if text msg
+                
                 
                 let timestampDate = Date(timeIntervalSince1970: TimeInterval(self.message!.timestamp))
                 

@@ -10,13 +10,13 @@ import UIKit
 import Kingfisher
 
 class PartnerMessageCell: UITableViewCell {
-    
-    @IBOutlet weak var profileImage: UIImageView!
+
     @IBOutlet weak var textMessageBody: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var chatBackgroundView: UIView!
-    
-    var previousMessage: Message?
+    @IBOutlet weak var messageImageView: UIImageView!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     
     var message: Message? {
         didSet {
@@ -24,24 +24,17 @@ class PartnerMessageCell: UITableViewCell {
         }
     }
     
-    var partner: User?
-    
-    fileprivate func updateProfile() {
-        if let user = partner {
-            if let url = user.profileImageUrl {
-                profileImage.kf.setImage(with: url)
-            }
-        }
-    }
+    var delegate: ImageMessageDelegate?
     
     func updateUI() {
-    
-        textMessageBody.text = message!.text!
-        
-        if let user = partner {
-            if let url = user.profileImageUrl {
-                profileImage.kf.setImage(with: url)
-            }
+        if let text = message!.text {
+            messageImageView.isHidden = true
+            textMessageBody.text = text
+        } else {
+//            messageImageView.isHidden = false
+//            messageImageView.kf.setImage(with: URL(string: message!.imageUrl!))
+//            textMessageBody.isHidden = true
+//            setupImageMessage()
         }
         
         // time label handling
@@ -49,20 +42,27 @@ class PartnerMessageCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm a"
         timeLabel.text = "\(dateFormatter.string(from: thisMsgTimestamp))"
-        
-        
-        if let lastMsg = previousMessage {
-            let lastMsgTimestamp = Date(timeIntervalSince1970: TimeInterval(lastMsg.timestamp))
-            let interval = thisMsgTimestamp.timeIntervalSince(lastMsgTimestamp)
-            let min = interval.truncatingRemainder(dividingBy: 3600) / 60
-            profileImage.isHidden = min < 1.0 ? true : false
-        } // end if let lastMsg
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         chatBackgroundView.layer.cornerRadius = 7.0
-        profileImage.maskCircle()
     }
+    
+    fileprivate func setupImageMessage() {
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        imageWidthConstraint.constant = screenWidth * 2 / 3
+        imageHeightConstraint.constant = message!.imageHeight! / message!.imageWidth! * (screenWidth * 2 / 3)
+        messageImageView.layer.cornerRadius = 7.0
+        
+        messageImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTapImageMessage)))
+        messageImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func handleTapImageMessage() {
+        delegate?.userTapped(on: messageImageView.image!)
+    }
+    
     
 }
