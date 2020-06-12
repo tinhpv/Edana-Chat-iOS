@@ -7,6 +7,7 @@ target 'Edana' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
   pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher', '~> 5.0'
 

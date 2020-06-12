@@ -13,6 +13,10 @@
 		7F54F3CB2492AA7200562545 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F3CA2492AA7200562545 /* DateHelper.swift */; };
 		7F54F3CE249338DB00562545 /* ImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F3CC249338DB00562545 /* ImageMessageCell.swift */; };
 		7F54F3CF249338DB00562545 /* ImageMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F54F3CD249338DB00562545 /* ImageMessageCell.xib */; };
+		7F54F3D22493587300562545 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F54F3D12493587300562545 /* GoogleService-Info.plist */; };
+		7F54F3D42493650400562545 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F3D32493650400562545 /* NotificationService.swift */; };
+		7F54F3DC2493EF3400562545 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F3DB2493EF3400562545 /* NotificationService.swift */; };
+		7F54F3E02493EF3400562545 /* EdanaNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F54F3D92493EF3400562545 /* EdanaNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F6BA768248FE7430086290F /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F6BA767248FE7430086290F /* Nunito-Light.ttf */; };
 		7F6BA76A24911F770086290F /* FirebaseService+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BA76924911F770086290F /* FirebaseService+Storage.swift */; };
 		7F6BA76C2492147B0086290F /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BA76B2492147B0086290F /* ImageViewerViewController.swift */; };
@@ -23,7 +27,6 @@
 		7F9B40A7247FB05800C93F04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40A5247FB05800C93F04 /* LaunchScreen.storyboard */; };
 		7F9B40B0247FB57000C93F04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40AF247FB57000C93F04 /* LoginViewController.swift */; };
 		7F9B40B4248003D700C93F04 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40B3248003D700C93F04 /* RegisterViewController.swift */; };
-		7F9B40B62480094D00C93F04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F9B40B52480094C00C93F04 /* GoogleService-Info.plist */; };
 		7F9B40B82480151F00C93F04 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40B72480151F00C93F04 /* Constant.swift */; };
 		7F9B40BA2482475F00C93F04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40B92482475F00C93F04 /* HomeViewController.swift */; };
 		7F9B40BC24825E1A00C93F04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9B40BB24825E1A00C93F04 /* BaseViewController.swift */; };
@@ -50,6 +53,30 @@
 		980BEE3B6FCDB61E7392218A /* Pods_Edana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7F54F3DE2493EF3400562545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F9B408F247FB05500C93F04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F54F3D82493EF3400562545;
+			remoteInfo = EdanaNotificationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7F54F3E42493EF3400562545 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7F54F3E02493EF3400562545 /* EdanaNotificationExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7F2CA7DB248EB12E0026D413 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		7F54F3C62492A58C00562545 /* TextMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
@@ -57,6 +84,12 @@
 		7F54F3CA2492AA7200562545 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		7F54F3CC249338DB00562545 /* ImageMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessageCell.swift; sourceTree = "<group>"; };
 		7F54F3CD249338DB00562545 /* ImageMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageMessageCell.xib; sourceTree = "<group>"; };
+		7F54F3D0249356BA00562545 /* Edana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Edana.entitlements; sourceTree = "<group>"; };
+		7F54F3D12493587300562545 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F54F3D32493650400562545 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		7F54F3D92493EF3400562545 /* EdanaNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EdanaNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F54F3DB2493EF3400562545 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		7F54F3DD2493EF3400562545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F6BA767248FE7430086290F /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		7F6BA76924911F770086290F /* FirebaseService+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseService+Storage.swift"; sourceTree = "<group>"; };
 		7F6BA76B2492147B0086290F /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +102,6 @@
 		7F9B40A8247FB05800C93F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9B40AF247FB57000C93F04 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7F9B40B3248003D700C93F04 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		7F9B40B52480094C00C93F04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F9B40B72480151F00C93F04 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7F9B40B92482475F00C93F04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7F9B40BB24825E1A00C93F04 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +131,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7F54F3D62493EF3400562545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F9B4094247FB05500C93F04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,10 +158,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7F54F3DA2493EF3400562545 /* EdanaNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7F54F3DB2493EF3400562545 /* NotificationService.swift */,
+				7F54F3DD2493EF3400562545 /* Info.plist */,
+			);
+			path = EdanaNotificationExtension;
+			sourceTree = "<group>";
+		};
 		7F9B408E247FB05500C93F04 = {
 			isa = PBXGroup;
 			children = (
 				7F9B4099247FB05500C93F04 /* Edana */,
+				7F54F3DA2493EF3400562545 /* EdanaNotificationExtension */,
 				7F9B4098247FB05500C93F04 /* Products */,
 				6A1C0914DD318F8C3C2FB7A5 /* Pods */,
 				9F16C295C55E406C6A45C438 /* Frameworks */,
@@ -133,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				7F9B4097247FB05500C93F04 /* Edana.app */,
+				7F54F3D92493EF3400562545 /* EdanaNotificationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +190,7 @@
 		7F9B4099247FB05500C93F04 /* Edana */ = {
 			isa = PBXGroup;
 			children = (
+				7F54F3D0249356BA00562545 /* Edana.entitlements */,
 				7F9B409A247FB05500C93F04 /* AppDelegate.swift */,
 				7F9B409C247FB05500C93F04 /* SceneDelegate.swift */,
 				7F9B40B72480151F00C93F04 /* Constant.swift */,
@@ -153,8 +204,8 @@
 				7F9B40DC248D348700C93F04 /* Colors.xcassets */,
 				7F9B40A3247FB05800C93F04 /* Assets.xcassets */,
 				7F9B40A5247FB05800C93F04 /* LaunchScreen.storyboard */,
-				7F9B40B52480094C00C93F04 /* GoogleService-Info.plist */,
 				7F9B40A8247FB05800C93F04 /* Info.plist */,
+				7F54F3D12493587300562545 /* GoogleService-Info.plist */,
 			);
 			path = Edana;
 			sourceTree = "<group>";
@@ -223,6 +274,7 @@
 				7F9B40CA2483B70300C93F04 /* FirebaseService+User.swift */,
 				7F9B40DA2489EFD500C93F04 /* FirebaseService+Message.swift */,
 				7F6BA76924911F770086290F /* FirebaseService+Storage.swift */,
+				7F54F3D32493650400562545 /* NotificationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -260,6 +312,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7F54F3D82493EF3400562545 /* EdanaNotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F54F3E12493EF3400562545 /* Build configuration list for PBXNativeTarget "EdanaNotificationExtension" */;
+			buildPhases = (
+				7F54F3D52493EF3400562545 /* Sources */,
+				7F54F3D62493EF3400562545 /* Frameworks */,
+				7F54F3D72493EF3400562545 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EdanaNotificationExtension;
+			productName = EdanaNotificationExtension;
+			productReference = 7F54F3D92493EF3400562545 /* EdanaNotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7F9B4096247FB05500C93F04 /* Edana */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F9B40AB247FB05800C93F04 /* Build configuration list for PBXNativeTarget "Edana" */;
@@ -269,10 +338,12 @@
 				7F9B4094247FB05500C93F04 /* Frameworks */,
 				7F9B4095247FB05500C93F04 /* Resources */,
 				6386088643C92C0A867AE42B /* [CP] Embed Pods Frameworks */,
+				7F54F3E42493EF3400562545 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7F54F3DF2493EF3400562545 /* PBXTargetDependency */,
 			);
 			name = Edana;
 			productName = Edana;
@@ -289,6 +360,9 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = TinhPV;
 				TargetAttributes = {
+					7F54F3D82493EF3400562545 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					7F9B4096247FB05500C93F04 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -308,18 +382,25 @@
 			projectRoot = "";
 			targets = (
 				7F9B4096247FB05500C93F04 /* Edana */,
+				7F54F3D82493EF3400562545 /* EdanaNotificationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7F54F3D72493EF3400562545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F9B4095247FB05500C93F04 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7F9B40F0248D4D9200C93F04 /* Nunito-Regular.ttf in Resources */,
 				7F9B40A7247FB05800C93F04 /* LaunchScreen.storyboard in Resources */,
-				7F9B40B62480094D00C93F04 /* GoogleService-Info.plist in Resources */,
 				7F9B40EE248D4D9200C93F04 /* Nunito-SemiBold.ttf in Resources */,
 				7F9B40D32488EED800C93F04 /* HomeMessageCell.xib in Resources */,
 				7F9B40A4247FB05800C93F04 /* Assets.xcassets in Resources */,
@@ -331,6 +412,7 @@
 				7F54F3CF249338DB00562545 /* ImageMessageCell.xib in Resources */,
 				7F9B40F1248D4D9200C93F04 /* Nunito-Bold.ttf in Resources */,
 				7F9B40C52482649B00C93F04 /* UserCell.xib in Resources */,
+				7F54F3D22493587300562545 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +461,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7F54F3D52493EF3400562545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F54F3DC2493EF3400562545 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F9B4093247FB05500C93F04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +477,7 @@
 				7F9B40E4248D3B6100C93F04 /* GradientView.swift in Sources */,
 				7F9B40DB2489EFD500C93F04 /* FirebaseService+Message.swift in Sources */,
 				7F9B40B0247FB57000C93F04 /* LoginViewController.swift in Sources */,
+				7F54F3D42493650400562545 /* NotificationService.swift in Sources */,
 				7F9B40E6248D3E6E00C93F04 /* Extension+UI.swift in Sources */,
 				7F9B409B247FB05500C93F04 /* AppDelegate.swift in Sources */,
 				7F9B40B82480151F00C93F04 /* Constant.swift in Sources */,
@@ -414,6 +505,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7F54F3DF2493EF3400562545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F54F3D82493EF3400562545 /* EdanaNotificationExtension */;
+			targetProxy = 7F54F3DE2493EF3400562545 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		7F9B40A0247FB05500C93F04 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -434,6 +533,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7F54F3E22493EF3400562545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8EKB44LT6;
+				INFOPLIST_FILE = EdanaNotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinhpv.edanachatapp.EdanaNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F54F3E32493EF3400562545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N8EKB44LT6;
+				INFOPLIST_FILE = EdanaNotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinhpv.edanachatapp.EdanaNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7F9B40A9247FB05800C93F04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -552,18 +689,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 970BCCC6852953C61C855506 /* Pods-Edana.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Edana/Edana.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5X4F448K5U;
+				DEVELOPMENT_TEAM = N8EKB44LT6;
 				INFOPLIST_FILE = Edana/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tinhpv.Edana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinhpv.edanachatapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -571,24 +710,35 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9D577EC60248E729C550573 /* Pods-Edana.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Edana/Edana.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5X4F448K5U;
+				DEVELOPMENT_TEAM = N8EKB44LT6;
 				INFOPLIST_FILE = Edana/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tinhpv.Edana;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinhpv.edanachatapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7F54F3E12493EF3400562545 /* Build configuration list for PBXNativeTarget "EdanaNotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F54F3E22493EF3400562545 /* Debug */,
+				7F54F3E32493EF3400562545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7F9B4092247FB05500C93F04 /* Build configuration list for PBXProject "Edana" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

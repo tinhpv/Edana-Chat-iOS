@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-Db-u82">
-                                <rect key="frame" x="19" y="28" width="37" height="13"/>
+                                <rect key="frame" x="22" y="28" width="34" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="GLR-xr-Xgp"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                             <constraint firstItem="PyU-z4-sUU" firstAttribute="top" secondItem="p03-lV-noH" secondAttribute="top" constant="2" id="H37-Vc-xHl"/>
                             <constraint firstItem="PyU-z4-sUU" firstAttribute="leading" secondItem="p03-lV-noH" secondAttribute="leading" constant="10" id="R0m-fn-Ya9"/>
                             <constraint firstAttribute="trailing" secondItem="PyU-z4-sUU" secondAttribute="trailing" constant="10" id="hHw-Xr-f9y"/>
-                            <constraint firstItem="Qss-Db-u82" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p03-lV-noH" secondAttribute="leading" constant="10" id="iSD-dl-meh"/>
+                            <constraint firstItem="Qss-Db-u82" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p03-lV-noH" secondAttribute="leading" constant="22" id="iSD-dl-meh"/>
                             <constraint firstItem="Qss-Db-u82" firstAttribute="top" secondItem="PyU-z4-sUU" secondAttribute="bottom" id="iTQ-kv-hLG"/>
                             <constraint firstAttribute="trailing" secondItem="Qss-Db-u82" secondAttribute="trailing" constant="10" id="m13-L6-CMx"/>
                         </constraints>

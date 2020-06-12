@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCN-ir-HJq">
-                                <rect key="frame" x="38.5" y="40.5" width="37.5" height="12.5"/>
+                                <rect key="frame" x="39.5" y="42.5" width="36.5" height="10.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="9"/>
                                 <color key="textColor" name="White"/>
                                 <nil key="highlightedColor"/>

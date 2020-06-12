@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupUI()
+        handleDismissKeyboard()
     }
     
     override func viewDidLoad() {
@@ -33,20 +34,36 @@ class LoginViewController: UIViewController {
         signUpButton.layer.cornerRadius = 4
     }
     
+    @objc func dismissKeyboard() {
+           view.endEditing(true)
+       }
+       
+    func handleDismissKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else { return }
         
-        FirebaseService.handleLogin(email: email, password: password) { (isAuth) in
-            if isAuth {
-                self.dismiss(animated: true, completion: {
-                    if let topVC = UIApplication.getTopViewController() as? HomeViewController {
-                        topVC.loadCurrentUserInfo()
+        FirebaseService.handleLogin(email: email, password: password) { (uid) in
+            if let id = uid {
+                FirebaseService.getUserInfo(with: id) { (user) in
+                    if let user = user {
+                        User.setCurrent(user, writeToUserDefaults: true)
+                        
+                        let homeVC = self.storyboard?.instantiateViewController(identifier: Constant.VCID.home) as! HomeViewController
+                        let navigationController = UINavigationController(rootViewController: homeVC)
+                        self.view.window?.rootViewController = navigationController
+                        self.view.window?.makeKeyAndVisible()
+                        
                     }
-                }) // end dismiss
-            } // end if bool
-        }
+                } // end get user info
+            } // end if let
+        } // end handling login
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {

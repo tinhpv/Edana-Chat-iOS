@@ -34,8 +34,12 @@ class TextMessageCell: UITableViewCell {
             textMessageLabel.textColor = UIColor(named: Constant.Color.darkBlue)
             timeLabel.textColor = UIColor(named: Constant.Color.darkGray)
             
+            
             leftEqualAnchor.constant = 12
             rightGreaterThanEqualAnchor.constant = 100
+            
+            leftEqualAnchor.isActive = true
+            rightGreaterThanEqualAnchor.isActive = true
             leftGreaterThanEqualAnchor.isActive = false
             rightEqualAnchor.isActive = false
             
@@ -46,6 +50,9 @@ class TextMessageCell: UITableViewCell {
             
             rightEqualAnchor.constant = 12
             leftGreaterThanEqualAnchor.constant = 100
+            
+            rightEqualAnchor.isActive = true
+            leftGreaterThanEqualAnchor.isActive = true
             rightGreaterThanEqualAnchor.isActive = false
             leftEqualAnchor.isActive = false
          

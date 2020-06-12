@@ -9,6 +9,22 @@
 import Foundation
 
 struct Constant {
+
+    
+    
+    struct UserDefaults {
+        static let currentUser = "currentUser"
+    }
+    
+    struct HTTPKey {
+        static let fcmServerUrl = "https://fcm.googleapis.com/fcm/send"
+        static let serverKey = "AAAAxP5rxbM:APA91bHlpCDHgzev-hzVr2XgjrZS2bDZNt4Hu8tDbIq5XGGy4LeWtvtcmTKg9ZU5c-IGWcrK0MTU7zZRn2YHjE83CzPm5qxpNyWEPS1Jj67-354QnQ1lz5IKjM_U2jZnMBK0fgZfXKbg"
+    }
+    
+    struct NotificationKey {
+        static let imageURL = "urlImageString"
+        static let senderID = "senderID"
+    }
     
     struct TBID {
         static let userCell = "user_cell"
@@ -48,6 +64,7 @@ struct Constant {
         static let time = "timestamp"
         static let imageWidth = "imgWidth"
         static let imageHeight = "imgHeight"
+        static let deviceID = "device_id"
     }
     
     struct VCID {

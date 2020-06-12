@@ -28,8 +28,7 @@ class ChatLogViewController: UIViewController {
             loadAndObserveNewMessages()
         }
     }
-    
-    let fromUser = Auth.auth().currentUser
+
     
     let photoPicker = PhotoPicker()
 
@@ -78,7 +77,6 @@ class ChatLogViewController: UIViewController {
     }
     
     func handleDismissKeyboard() {
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
         chatlogTableView.addGestureRecognizer(tap)
@@ -117,13 +115,20 @@ class ChatLogViewController: UIViewController {
     @IBAction func sendMsgPressed(_ sender: Any) {
         guard let text = chatTextField.text else { return }
         if (!text.isEmpty) {
-            FirebaseService.handleSaveTextMessage(content: text, fromID: fromUser!.uid, toID: toUser!.id) { (error) in
+            FirebaseService.handleSaveTextMessage(content: text, fromID: User.current.id, toID: toUser!.id) { (error) in
                 if let error = error {
                     // TODO: handle error
                     print(error)
+                } else {
+                    NotificationService.sendNotification(to: self.toUser!.deviceID,
+                                                         senderName: User.current.name,
+                                                         textMsg: text,
+                                                         imageUrl: nil)
                 }
             }
         } // end if empty text
+        
+        chatTextField.text = ""
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -140,9 +145,14 @@ class ChatLogViewController: UIViewController {
         self.photoPicker.completionHandler = { pickedImage in
             FirebaseService.saveImage(in: Constant.DBKey.imageMsg, pickedImage) { (url) in
                 guard let url = url else { return }
-                FirebaseService.handleSaveImageMessage(imageUrl: url.absoluteString, imgWidth: pickedImage.size.width, imgHeight: pickedImage.size.height, fromID: self.fromUser!.uid, toID: self.toUser!.id) { (error) in
+                FirebaseService.handleSaveImageMessage(imageUrl: url.absoluteString, imgWidth: pickedImage.size.width, imgHeight: pickedImage.size.height, fromID: User.current.id, toID: self.toUser!.id) { (error) in
                     if let error = error {
                         print(error)
+                    } else {
+                        NotificationService.sendNotification(to: self.toUser!.deviceID,
+                                                             senderName: User.current.name,
+                                                             textMsg: nil,
+                                                             imageUrl: url.absoluteString)
                     }
                 } // end handle save image message
             } // end upload image to firebase storage
@@ -150,7 +160,7 @@ class ChatLogViewController: UIViewController {
     }
     
     func loadAndObserveNewMessages() {
-        FirebaseService.observeMessagesForSingleChatLog(currentUserID: fromUser!.uid, partnerID: toUser!.id) { (msg) in
+        FirebaseService.observeMessagesForSingleChatLog(currentUserID: Auth.auth().currentUser!.uid, partnerID: toUser!.id) { (msg) in
             if let msg = msg {
                 self.messages.append(msg)
                 DispatchQueue.main.async {

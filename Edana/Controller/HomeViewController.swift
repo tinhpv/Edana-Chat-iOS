@@ -23,7 +23,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         homeMessageTableView.delegate = self
         homeMessageTableView.dataSource = self
         homeMessageTableView.register(UINib(nibName: Constant.TBID.homeMessageCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.homeMessageCeell)
@@ -33,12 +32,19 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupUI()
         setupNavBar()
-        checkUserLoggedIn()
     }
     
     fileprivate func setupUI() {
         userProfileImageview.maskCircle()
         nameBox.layer.cornerRadius = 7
+        
+        self.messagesDictionary.removeAll()
+        self.messages.removeAll()
+        self.homeMessageTableView.reloadData()
+        
+        self.updateUserUI(user: User.current)
+        self.observeNewMessages()
+    
     }
     
     fileprivate func setupNavBar() {
@@ -65,26 +71,6 @@ class HomeViewController: UIViewController {
         vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
-    
-    func loadCurrentUserInfo() {
-        self.messagesDictionary.removeAll()
-        self.messages.removeAll()
-        self.homeMessageTableView.reloadData()
-        FirebaseService.getUserInfo(with: Auth.auth().currentUser!.uid) { (user) in
-            guard let user = user else { return }
-            self.updateUserUI(user: user)
-            self.observeNewMessages()
-        } // end get user
-    }
-    
-    func checkUserLoggedIn() {
-        if Auth.auth().currentUser?.uid == nil {
-            perform(#selector(handleLogout), with: nil, afterDelay: 0)
-        } else {
-            loadCurrentUserInfo()
-        } // end check auth
-    }
-    
 
     @objc func handleLogout() {
         do {
@@ -98,7 +84,7 @@ class HomeViewController: UIViewController {
     }
     
     func observeNewMessages() {
-        FirebaseService.observeNewMessages(of: Auth.auth().currentUser!.uid) { (msg) in
+        FirebaseService.observeNewMessages(of: User.current.id) { (msg) in
             if let message = msg {
                 self.messagesDictionary[message.chatPartnerID()!] = message
                 self.messages = Array(self.messagesDictionary.values)

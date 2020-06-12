@@ -30,6 +30,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        handleDismissKeyboard()
     }
     
     func setupUI() {
@@ -58,19 +59,36 @@ class RegisterViewController: UIViewController {
         self.photoPicker.presentActionSheet(from: self)
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func handleDismissKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
 
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         guard let email = emailTextField.text,
             let password = passwordTextField.text,
             let name = nameTextField.text else { return }
         
-        FirebaseService.handleCreateNewUser(email: email, password: password, name: name, profileImage: profileImageView.image) { error in
-            if (error != nil) {
-                
-            } else {
-                self.dismiss(animated: true, completion: nil)
+        FirebaseService.handleCreateNewUser(email: email, password: password, name: name, profileImage: profileImageView.image) { (userUID) in
+            if let uid = userUID {
+                FirebaseService.getUserInfo(with: uid) { (user) in
+                    if let user = user {
+                        User.setCurrent(user, writeToUserDefaults: true)
+                        
+                        let homeVC = self.storyboard?.instantiateViewController(identifier: Constant.VCID.home) as! HomeViewController
+                        let navigationController = UINavigationController(rootViewController: homeVC)
+                        self.view.window?.rootViewController = navigationController
+                        self.view.window?.makeKeyAndVisible()
+                    }
+                } // end getting user info
             }
-        } // end create new user
+        } // end handling create new user
     }
     
     

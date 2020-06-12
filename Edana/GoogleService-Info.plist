@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>846082065843-mp5vjpfa3od51jbaf54osgt8292khe1a.apps.googleusercontent.com</string>
+	<string>846082065843-oa458j5eqvh8eoicum0kn66b3c5eqsu8.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.846082065843-mp5vjpfa3od51jbaf54osgt8292khe1a</string>
+	<string>com.googleusercontent.apps.846082065843-oa458j5eqvh8eoicum0kn66b3c5eqsu8</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBUXMyvTNNTL1qr9yA40jv1p9t0kngTnfU</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tinhpv.Edana</string>
+	<string>com.tinhpv.edanachatapp</string>
 	<key>PROJECT_ID</key>
 	<string>appchatmovie</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:846082065843:ios:d2b8806895cb2d014cf7c6</string>
+	<string>1:846082065843:ios:531016912ec66dcc4cf7c6</string>
 	<key>DATABASE_URL</key>
 	<string>https://appchatmovie.firebaseio.com</string>
 </dict>

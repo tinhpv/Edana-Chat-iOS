@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZIB-PN-7hX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -758,28 +758,6 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2553.6231884057975" y="843.75"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dUD-F0-uU3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZIB-PN-7hX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SyZ-Gd-Hx0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="White"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="DarkBlue"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Nxb-3a-teg" kind="relationship" relationship="rootViewController" id="hFB-TW-KhW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YZE-py-LmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="69.565217391304358" y="77.678571428571431"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="vrM-HL-ZBy">
