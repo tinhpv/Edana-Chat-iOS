@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="image_message_cell" rowHeight="63" id="KGk-i7-Jjw" customClass="ImageMessageCell" customModule="Edana" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-o3-shK">
+                        <rect key="frame" x="119" y="3" width="82" height="57"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-so-8Db">
+                                <rect key="frame" x="3" y="3" width="76" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="aW3-qn-Plf"/>
+                                    <constraint firstAttribute="width" constant="76" id="wGU-6B-aCW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCN-ir-HJq">
+                                <rect key="frame" x="38.5" y="40.5" width="37.5" height="12.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="9"/>
+                                <color key="textColor" name="White"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Green"/>
+                        <constraints>
+                            <constraint firstItem="VCN-ir-HJq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dyT-o3-shK" secondAttribute="leading" constant="20" id="2Q0-Nr-td9"/>
+                            <constraint firstItem="WLe-so-8Db" firstAttribute="leading" secondItem="dyT-o3-shK" secondAttribute="leading" constant="3" id="5kz-mf-LHk"/>
+                            <constraint firstItem="WLe-so-8Db" firstAttribute="top" secondItem="dyT-o3-shK" secondAttribute="top" constant="3" id="ADG-RG-q9d"/>
+                            <constraint firstAttribute="bottom" secondItem="VCN-ir-HJq" secondAttribute="bottom" constant="4" id="L8f-6T-dw2"/>
+                            <constraint firstAttribute="bottom" secondItem="WLe-so-8Db" secondAttribute="bottom" constant="3" id="Wo1-Kx-xIu"/>
+                            <constraint firstAttribute="trailing" secondItem="VCN-ir-HJq" secondAttribute="trailing" constant="6" id="abv-KH-dbh"/>
+                            <constraint firstAttribute="trailing" secondItem="WLe-so-8Db" secondAttribute="trailing" constant="3" id="ral-pw-xlN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dyT-o3-shK" secondAttribute="trailing" constant="119" id="3y9-2B-6dt"/>
+                    <constraint firstAttribute="trailing" secondItem="dyT-o3-shK" secondAttribute="trailing" constant="119" id="Bj9-rP-Wmk"/>
+                    <constraint firstItem="dyT-o3-shK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="CqV-1g-lG3"/>
+                    <constraint firstAttribute="bottom" secondItem="dyT-o3-shK" secondAttribute="bottom" constant="3" id="e9i-Dr-NLd"/>
+                    <constraint firstItem="dyT-o3-shK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="119" id="hf4-f9-3oN"/>
+                    <constraint firstItem="dyT-o3-shK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="119" id="r3m-zV-npe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bubbleView" destination="dyT-o3-shK" id="yuH-Zr-NJH"/>
+                <outlet property="imageHeightConstraint" destination="aW3-qn-Plf" id="gnJ-je-VCs"/>
+                <outlet property="imageWidthConstraint" destination="wGU-6B-aCW" id="7Wd-xE-bLA"/>
+                <outlet property="leadingEqualAnchor" destination="r3m-zV-npe" id="kLF-qs-btl"/>
+                <outlet property="leadingGreaterEqualAnchor" destination="hf4-f9-3oN" id="smw-FH-y43"/>
+                <outlet property="mesageImageView" destination="WLe-so-8Db" id="mKN-od-fEW"/>
+                <outlet property="timeLabel" destination="VCN-ir-HJq" id="2eY-7q-tv5"/>
+                <outlet property="trailingEqualAnchor" destination="Bj9-rP-Wmk" id="A5o-rP-nf8"/>
+                <outlet property="trailingGreaterEqualAnchor" destination="3y9-2B-6dt" id="EWm-4N-Rnl"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="138.95089285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Green">
+            <color red="0.17299999296665192" green="0.79600000381469727" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -21,6 +21,12 @@ struct Constant {
         
         static let partnerChatCell = "partner_chat_cell"
         static let partnerChatCellXibName = "PartnerMessageCell"
+        
+        static let textMessageCell = "text_message_cell"
+        static let textMessageCellXibName = "TextMessageCell"
+        
+        static let imageMessageCell = "image_message_cell"
+        static let imageMessageCellXibName = "ImageMessageCell"
     }
     
     struct DBKey {
@@ -51,5 +57,14 @@ struct Constant {
         static let newMessage = "new_message"
         static let chatlog = "chatlog"
         static let zoomVC = "zoom_image"
+    }
+    
+    struct Color {
+        static let blue = "Blue"
+        static let darkBlue = "DarkBlue"
+        static let green = "Green"
+        static let white = "White"
+        static let darkGray = "DarkGray"
+        static let lightGray = "LightGray"
     }
 }

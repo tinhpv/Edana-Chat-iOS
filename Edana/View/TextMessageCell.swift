@@ -14,9 +14,10 @@ class TextMessageCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var bubbleView: UIView!
     
-    @IBOutlet weak var bubbleLeftAnchor: NSLayoutConstraint!
-    @IBOutlet weak var bubbleRightAnchor: NSLayoutConstraint!
-    
+    @IBOutlet var rightEqualAnchor: NSLayoutConstraint!
+    @IBOutlet var rightGreaterThanEqualAnchor: NSLayoutConstraint!
+    @IBOutlet var leftEqualAnchor: NSLayoutConstraint!
+    @IBOutlet var leftGreaterThanEqualAnchor: NSLayoutConstraint!
     
     var message: Message? {
         didSet {
@@ -27,11 +28,35 @@ class TextMessageCell: UITableViewCell {
     fileprivate func updateUI() {
         textMessageLabel.text = message!.text!
         timeLabel.text = TimeHelper.convertToTime(timestamp: message!.timestamp)
+        
+        if message!.chatPartnerID()! == message!.senderID {
+            bubbleView.backgroundColor = UIColor(named: Constant.Color.white)
+            textMessageLabel.textColor = UIColor(named: Constant.Color.darkBlue)
+            timeLabel.textColor = UIColor(named: Constant.Color.darkGray)
+            
+            leftEqualAnchor.constant = 12
+            rightGreaterThanEqualAnchor.constant = 100
+            leftGreaterThanEqualAnchor.isActive = false
+            rightEqualAnchor.isActive = false
+            
+        } else {
+            bubbleView.backgroundColor = UIColor(named: Constant.Color.blue)
+            textMessageLabel.textColor = UIColor(named: Constant.Color.white)
+            timeLabel.textColor = UIColor(named: Constant.Color.lightGray)
+            
+            rightEqualAnchor.constant = 12
+            leftGreaterThanEqualAnchor.constant = 100
+            rightGreaterThanEqualAnchor.isActive = false
+            leftEqualAnchor.isActive = false
+         
+        } // end if checking chat sender
+        
+        
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bubbleView.layer.cornerRadius = 7.0
     }
 
     

@@ -97,8 +97,12 @@ class ChatLogViewController: UIViewController {
         
         chatlogTableView.dataSource = self
         chatlogTableView.delegate = self
-        chatlogTableView.register(UINib(nibName: Constant.TBID.chatCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.chatCell)
-        chatlogTableView.register(UINib(nibName: Constant.TBID.partnerChatCellXibName, bundle: nil), forCellReuseIdentifier: Constant.TBID.partnerChatCell)
+       
+        // text message cell register
+        chatlogTableView.register(UINib(nibName: Constant.TBID.textMessageCellXibName, bundle: nil), forCellReuseIdentifier: Constant.TBID.textMessageCell)
+        chatlogTableView.register(UINib(nibName: Constant.TBID.imageMessageCellXibName, bundle: nil), forCellReuseIdentifier: Constant.TBID.imageMessageCell)
+        
+        
         chatlogTableView.rowHeight = UITableView.automaticDimension
         chatlogTableView.estimatedRowHeight = 300
         
@@ -168,22 +172,21 @@ extension ChatLogViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let msg = messages[indexPath.row]
-        if msg.chatPartnerID()! == msg.senderID {
-            let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.partnerChatCell, for: indexPath)
-                as! PartnerMessageCell
-            cell.message = self.messages[indexPath.row]
-            cell.delegate = self
+        
+        if msg.text != nil {
+            let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.textMessageCell, for: indexPath) as! TextMessageCell
+            cell.message = msg
             cell.layer.backgroundColor = UIColor.clear.cgColor
-            
             return cell
         } else {
-            let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.chatCell, for: indexPath)
-                as! ChatCell
+            let cell = chatlogTableView.dequeueReusableCell(withIdentifier: Constant.TBID.imageMessageCell, for: indexPath)
+                as! ImageMessageCell
             cell.message = self.messages[indexPath.row]
             cell.delegate = self
             cell.layer.backgroundColor = UIColor.clear.cgColor
             return cell
         }
+        
     }
 }
 
