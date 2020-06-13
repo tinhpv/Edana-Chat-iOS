@@ -20,7 +20,8 @@ struct NotificationService {
                     "title" : senderName,
                     "body" : textMsg,
                     "badge" : 1,
-                    "sound" : "default"
+                    "sound" : "default",
+                    "click_action" : "image_category"
                     ],
                 "data" : ["senderID" : User.current.id]
             ] as [String : AnyObject]

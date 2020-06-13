@@ -12,10 +12,6 @@ import FirebaseAuth
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeMessageTableView: UITableView!
-    @IBOutlet weak var emailTextField: UILabel!
-    @IBOutlet weak var userNameTextField: UILabel!
-    @IBOutlet weak var userProfileImageview: UIImageView!
-    @IBOutlet weak var nameBox: UIView!
     @IBOutlet weak var userInfoView: UIView!
 
     var messages = [Message]()
@@ -30,21 +26,15 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupUI()
+        prepareUI()
         setupNavBar()
+        observeNewMessages()
     }
     
-    fileprivate func setupUI() {
-        userProfileImageview.maskCircle()
-        nameBox.layer.cornerRadius = 7
-        
+    fileprivate func prepareUI() {
         self.messagesDictionary.removeAll()
         self.messages.removeAll()
         self.homeMessageTableView.reloadData()
-        
-        self.updateUserUI(user: User.current)
-        self.observeNewMessages()
-    
     }
     
     fileprivate func setupNavBar() {
@@ -53,23 +43,18 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
     }
     
-    fileprivate func updateUserUI(user: User) {
-        if let profileImageURL = user.profileImageUrl {
-            userProfileImageview.kf.setImage(with: profileImageURL)
-        }
-        
-        userNameTextField.text = user.name
-        emailTextField.text = user.email
-    }
-    
-    @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
-        perform(#selector(self.handleLogout))
-    }
+//    @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
+//        perform(#selector(self.handleLogout))
+//    }
     
     @IBAction func addNewMessagePressed(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(identifier: Constant.VCID.newMessage) as! NewMessageViewController
         vc.delegate = self
         present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func settingAccount(_ sender: UIButton) {
+        
     }
 
     @objc func handleLogout() {
@@ -132,7 +117,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(95)
+        return CGFloat(90)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

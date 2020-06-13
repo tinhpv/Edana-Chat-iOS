@@ -90,6 +90,8 @@
 		7F54F3D92493EF3400562545 /* EdanaNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EdanaNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54F3DB2493EF3400562545 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7F54F3DD2493EF3400562545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F54F3EA2494B38200562545 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		7F54F3EC2494B38200562545 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		7F6BA767248FE7430086290F /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		7F6BA76924911F770086290F /* FirebaseService+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseService+Storage.swift"; sourceTree = "<group>"; };
 		7F6BA76B2492147B0086290F /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				937F63B2A53BA526C5C5F4D5 /* Pods_Edana.framework */,
+				7F54F3EA2494B38200562545 /* UserNotifications.framework */,
+				7F54F3EC2494B38200562545 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
