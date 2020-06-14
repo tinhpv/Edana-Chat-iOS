@@ -11,9 +11,9 @@ import Foundation
 struct User: Codable {
     
     let id: String
-    let name: String
+    var name: String
     let email: String
-    let profileImageUrl: URL?
+    var profileImageUrl: URL?
     let deviceID: String
     
     private static var _current: User?

@@ -17,6 +17,9 @@
 		7F54F3D42493650400562545 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F3D32493650400562545 /* NotificationService.swift */; };
 		7F54F3DC2493EF3400562545 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F3DB2493EF3400562545 /* NotificationService.swift */; };
 		7F54F3E02493EF3400562545 /* EdanaNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F54F3D92493EF3400562545 /* EdanaNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F54F4102495DABA00562545 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54F40F2495DABA00562545 /* ProfileViewController.swift */; };
+		7F54F4132495ECC900562545 /* home_chat.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F54F4122495ECC900562545 /* home_chat.json */; };
+		7F54F4152495FB3000562545 /* start_conversation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F54F4142495FB3000562545 /* start_conversation.json */; };
 		7F6BA768248FE7430086290F /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F6BA767248FE7430086290F /* Nunito-Light.ttf */; };
 		7F6BA76A24911F770086290F /* FirebaseService+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BA76924911F770086290F /* FirebaseService+Storage.swift */; };
 		7F6BA76C2492147B0086290F /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6BA76B2492147B0086290F /* ImageViewerViewController.swift */; };
@@ -92,6 +95,9 @@
 		7F54F3DD2493EF3400562545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F54F3EA2494B38200562545 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7F54F3EC2494B38200562545 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		7F54F40F2495DABA00562545 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7F54F4122495ECC900562545 /* home_chat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_chat.json; sourceTree = "<group>"; };
+		7F54F4142495FB3000562545 /* start_conversation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = start_conversation.json; sourceTree = "<group>"; };
 		7F6BA767248FE7430086290F /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
 		7F6BA76924911F770086290F /* FirebaseService+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseService+Storage.swift"; sourceTree = "<group>"; };
 		7F6BA76B2492147B0086290F /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,15 @@
 			path = EdanaNotificationExtension;
 			sourceTree = "<group>";
 		};
+		7F54F4112495ECBD00562545 /* JSON_Animation */ = {
+			isa = PBXGroup;
+			children = (
+				7F54F4142495FB3000562545 /* start_conversation.json */,
+				7F54F4122495ECC900562545 /* home_chat.json */,
+			);
+			path = JSON_Animation;
+			sourceTree = "<group>";
+		};
 		7F9B408E247FB05500C93F04 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +207,7 @@
 		7F9B4099247FB05500C93F04 /* Edana */ = {
 			isa = PBXGroup;
 			children = (
+				7F54F4112495ECBD00562545 /* JSON_Animation */,
 				7F54F3D0249356BA00562545 /* Edana.entitlements */,
 				7F9B409A247FB05500C93F04 /* AppDelegate.swift */,
 				7F9B409C247FB05500C93F04 /* SceneDelegate.swift */,
@@ -222,6 +238,7 @@
 				7F9B40BD248261E600C93F04 /* NewMessageViewController.swift */,
 				7F9B40CC2488CA0900C93F04 /* ChatLogViewController.swift */,
 				7F6BA76B2492147B0086290F /* ImageViewerViewController.swift */,
+				7F54F40F2495DABA00562545 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -410,9 +427,11 @@
 				7F9B40A4247FB05800C93F04 /* Assets.xcassets in Resources */,
 				7F6BA768248FE7430086290F /* Nunito-Light.ttf in Resources */,
 				7F9B40DD248D348700C93F04 /* Colors.xcassets in Resources */,
+				7F54F4152495FB3000562545 /* start_conversation.json in Resources */,
 				7F54F3C92492A58C00562545 /* TextMessageCell.xib in Resources */,
 				7F9B40EF248D4D9200C93F04 /* Nunito-ExtraBold.ttf in Resources */,
 				7F9B40A2247FB05500C93F04 /* Main.storyboard in Resources */,
+				7F54F4132495ECC900562545 /* home_chat.json in Resources */,
 				7F54F3CF249338DB00562545 /* ImageMessageCell.xib in Resources */,
 				7F9B40F1248D4D9200C93F04 /* Nunito-Bold.ttf in Resources */,
 				7F9B40C52482649B00C93F04 /* UserCell.xib in Resources */,
@@ -495,6 +514,7 @@
 				7F9B40C0248263EB00C93F04 /* User.swift in Sources */,
 				7F54F3CE249338DB00562545 /* ImageMessageCell.swift in Sources */,
 				7F9B40BC24825E1A00C93F04 /* BaseViewController.swift in Sources */,
+				7F54F4102495DABA00562545 /* ProfileViewController.swift in Sources */,
 				7F2CA7DC248EB12E0026D413 /* CustomUIView.swift in Sources */,
 				7F9B40BA2482475F00C93F04 /* HomeViewController.swift in Sources */,
 				7F6BA76A24911F770086290F /* FirebaseService+Storage.swift in Sources */,

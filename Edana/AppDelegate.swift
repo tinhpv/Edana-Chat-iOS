@@ -80,12 +80,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             currentVC = (currentVC as! UINavigationController).visibleViewController
         } // end get visible view controller
         
-        if (currentVC is ChatLogViewController){
+        if (currentVC is ChatLogViewController) {
             let chatlogVC = currentVC as! ChatLogViewController
             if chatlogVC.toUser?.id != senderID {
                 completionHandler([.alert, .badge, .sound])
             }
-        } else {
+        } else if !(currentVC is HomeViewController) {
             completionHandler([.alert, .badge, .sound])
         } // end if current VC is chatlog
     
@@ -131,7 +131,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                     }
                 } // end delay
                 
-            
                 completionHandler()
             } else {
                 FirebaseService.getUserInfo(with: senderID!) { (user) in
@@ -169,6 +168,7 @@ extension UIWindow {
         if let rootViewController: UIViewController = self.rootViewController {
             return UIWindow.getVisibleViewControllerFrom(vc: rootViewController)
         }
+        
         return nil
     }
     

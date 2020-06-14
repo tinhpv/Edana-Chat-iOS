@@ -30,9 +30,9 @@ class TextMessageCell: UITableViewCell {
         timeLabel.text = TimeHelper.convertToTime(timestamp: message!.timestamp)
         
         if message!.chatPartnerID()! == message!.senderID {
-            bubbleView.backgroundColor = UIColor(named: Constant.Color.white)
+            bubbleView.backgroundColor = UIColor(named: Constant.Color.lightGray)
             textMessageLabel.textColor = UIColor(named: Constant.Color.darkBlue)
-            timeLabel.textColor = UIColor(named: Constant.Color.darkGray)
+            timeLabel.textColor = UIColor(named: Constant.Color.darkBlue)
             
             
             leftEqualAnchor.constant = 12
@@ -44,9 +44,9 @@ class TextMessageCell: UITableViewCell {
             rightEqualAnchor.isActive = false
             
         } else {
-            bubbleView.backgroundColor = UIColor(named: Constant.Color.blue)
-            textMessageLabel.textColor = UIColor(named: Constant.Color.white)
-            timeLabel.textColor = UIColor(named: Constant.Color.lightGray)
+            bubbleView.backgroundColor = UIColor(named: Constant.Color.lightBlue)
+            textMessageLabel.textColor = UIColor(named: Constant.Color.darkBlue)
+            timeLabel.textColor = UIColor(named: Constant.Color.darkBlue)
             
             rightEqualAnchor.constant = 12
             leftGreaterThanEqualAnchor.constant = 100

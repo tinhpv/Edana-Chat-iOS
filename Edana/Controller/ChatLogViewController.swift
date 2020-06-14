@@ -11,12 +11,14 @@ import FirebaseAuth
 
 class ChatLogViewController: UIViewController {
     
+    
+    @IBOutlet weak var utilButtonGroupView: UIView!
+    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var chatlogTableView: UITableView!
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var chatInputView: UIView!
     @IBOutlet weak var partnerProfileImage: UIImageView!
     @IBOutlet weak var partnerNameLabel: UILabel!
-    
     @IBOutlet weak var chatlogTableViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputViewBottomConstraint: NSLayoutConstraint!
     
@@ -34,13 +36,12 @@ class ChatLogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setupKeyboard()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        setupUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,50 +52,16 @@ class ChatLogViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func handleKeyboardShowingUp(_ notification: Notification) {
-        guard let userInfo = (notification as Notification).userInfo,
-            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
-        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-        
-        let keyboardHeight = keyboardFrame.cgRectValue.size.height
-        
-        let newHeight: CGFloat
-        if #available(iOS 11.0, *) {
-            newHeight = keyboardHeight - view.safeAreaInsets.bottom + 7
-        } else {
-            newHeight = keyboardHeight
-        }
-        
-        self.inputViewBottomConstraint.constant == 7 ? (self.inputViewBottomConstraint.constant = newHeight) : (self.inputViewBottomConstraint.constant = 7)
-        
-        UIView.animate(withDuration: duration, animations: {
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    func handleDismissKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        chatlogTableView.addGestureRecognizer(tap)
-    }
-    
-    fileprivate func setupKeyboard() {
-        handleDismissKeyboard()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardShowingUp), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-    }
-    
     fileprivate func setupUI() {
         self.navigationItem.hidesBackButton = true
         chatInputView.layer.cornerRadius = 25.0
         partnerProfileImage.maskCircle()
+        sendButton.isHidden = true
         
         chatlogTableView.dataSource = self
         chatlogTableView.delegate = self
+        
+        chatTextField.delegate = self
        
         // text message cell register
         chatlogTableView.register(UINib(nibName: Constant.TBID.textMessageCellXibName, bundle: nil), forCellReuseIdentifier: Constant.TBID.textMessageCell)
@@ -111,6 +78,45 @@ class ChatLogViewController: UIViewController {
             }
         }
     }
+    
+    fileprivate func setupKeyboard() {
+        handleDismissKeyboard()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardShowingUp), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    
+    @objc func handleKeyboardShowingUp(_ notification: Notification) {
+        guard let userInfo = (notification as Notification).userInfo,
+            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+        let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        
+        let keyboardHeight = keyboardFrame.cgRectValue.size.height
+        
+        let newHeight: CGFloat
+        if #available(iOS 11.0, *) {
+            newHeight = keyboardHeight - view.safeAreaInsets.bottom + 3
+        } else {
+            newHeight = keyboardHeight
+        }
+        
+        self.inputViewBottomConstraint.constant == 3 ? (self.inputViewBottomConstraint.constant = newHeight + 3) : (self.inputViewBottomConstraint.constant = 3)
+        
+        UIView.animate(withDuration: duration, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func handleDismissKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        chatlogTableView.addGestureRecognizer(tap)
+    }
+    
     
     @IBAction func sendMsgPressed(_ sender: Any) {
         guard let text = chatTextField.text else { return }
@@ -139,6 +145,14 @@ class ChatLogViewController: UIViewController {
     @IBAction func callPressed(_ sender: UIButton) {
         
     }
+    
+    @IBAction func takePhotoPressed(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func recordPressed(_ sender: UIButton) {
+    }
+    
     
     @IBAction func sendImagePressed(_ sender: UIButton) {
         self.photoPicker.presentActionSheet(from: self)
@@ -200,6 +214,25 @@ extension ChatLogViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension ChatLogViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let text = textField.text {
+            if text.count == 1 && string.isEmpty { // empty
+                self.utilButtonGroupView.isHidden = false
+                self.sendButton.isHidden = true
+            } else {
+                if !string.isEmpty {
+                    self.utilButtonGroupView.isHidden = true
+                    self.sendButton.isHidden = false
+                }
+            }
+        } // end get text of textfield
+        
+        return true
+    }
+}
+
 
 extension ChatLogViewController: ImageMessageDelegate {
     func userTapped(on image: UIImage) {
@@ -207,6 +240,4 @@ extension ChatLogViewController: ImageMessageDelegate {
         zoomVC.imageToZoom = image
         present(zoomVC, animated: true, completion: nil)
     }
-    
-    
 }

@@ -11,6 +11,9 @@ import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var defaultInfoView: UIView!
+    @IBOutlet weak var sendFirstMsgButton: UIButton!
     @IBOutlet weak var homeMessageTableView: UITableView!
     @IBOutlet weak var userInfoView: UIView!
 
@@ -19,33 +22,36 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareUI()
+        observeNewMessages()
+        
         homeMessageTableView.delegate = self
         homeMessageTableView.dataSource = self
         homeMessageTableView.register(UINib(nibName: Constant.TBID.homeMessageCellXibName , bundle: nil), forCellReuseIdentifier: Constant.TBID.homeMessageCeell)
-        
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        prepareUI()
-        setupNavBar()
-        observeNewMessages()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     fileprivate func prepareUI() {
-        self.messagesDictionary.removeAll()
-        self.messages.removeAll()
-        self.homeMessageTableView.reloadData()
+        if self.messages.count == 0 {
+            self.defaultInfoView.isHidden = false
+            self.homeMessageTableView.isHidden = true
+        } else {
+            self.defaultInfoView.isHidden = true
+            self.homeMessageTableView.isHidden = false
+        }
+        
+        self.sendFirstMsgButton.layer.cornerRadius = 10.0
+        self.userNameLabel.text = User.current.name
     }
-    
-    fileprivate func setupNavBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-    }
-    
-//    @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
-//        perform(#selector(self.handleLogout))
-//    }
+
     
     @IBAction func addNewMessagePressed(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(identifier: Constant.VCID.newMessage) as! NewMessageViewController
@@ -54,28 +60,21 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func settingAccount(_ sender: UIButton) {
-        
+        let vc = self.storyboard?.instantiateViewController(identifier: Constant.VCID.profileVC) as! ProfileViewController
+        present(vc, animated: true, completion: nil)
     }
 
-    @objc func handleLogout() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print(error.localizedDescription)
-        } // end do-catch
-        
-        let loginController = self.storyboard?.instantiateViewController(identifier: Constant.VCID.login) as! LoginViewController
-        present(loginController, animated: true, completion: nil)
-    }
-    
     func observeNewMessages() {
+        self.messagesDictionary.removeAll()
+        self.messages.removeAll()
+        self.homeMessageTableView.reloadData()
+        
         FirebaseService.observeNewMessages(of: User.current.id) { (msg) in
             if let message = msg {
                 self.messagesDictionary[message.chatPartnerID()!] = message
                 self.messages = Array(self.messagesDictionary.values)
                 self.messages = self.messages.sorted()
             }
-            
             
             // postpone to reload multiple times
             self.timer?.invalidate()
@@ -87,8 +86,17 @@ class HomeViewController: UIViewController {
     
     @objc func reloadTable() {
         DispatchQueue.main.async {
+            
+            if self.messages.count == 0 {
+                self.defaultInfoView.isHidden = false
+                self.homeMessageTableView.isHidden = true
+            } else {
+                self.defaultInfoView.isHidden = true
+                self.homeMessageTableView.isHidden = false
+            }
+            
             self.homeMessageTableView.reloadData()
-        }
+        } // end dispatch queue
     }
 }
 

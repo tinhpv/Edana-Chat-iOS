@@ -14,9 +14,8 @@ import FirebaseDatabase
 
 struct FirebaseService {
     
-    static func updateUserInfoData(of userID: String, with field: String, value: String, completion: @escaping (Error?) -> Void) {
+    static func updateUserInfoData(of userID: String, updateData: [String : String], completion: @escaping (Error?) -> Void) {
         let userDb = Database.database().reference()
-        let updateData = [field : value]
         userDb.child(Constant.DBKey.users).child(userID).updateChildValues(updateData) { (error, ref) in
             if error != nil {
                 completion(error)
@@ -32,7 +31,8 @@ struct FirebaseService {
                 completion(nil)
             } else {
                 //update device id
-                updateUserInfoData(of: (authResult?.user.uid)!, with: Constant.DBKey.deviceID, value: AppDelegate.DEVICE_ID) { (error) in
+                let updateData = [Constant.DBKey.deviceID : AppDelegate.DEVICE_ID]
+                updateUserInfoData(of: (authResult?.user.uid)!, updateData: updateData) { (error) in
                     if error != nil {
                         completion(nil)
                     } else {

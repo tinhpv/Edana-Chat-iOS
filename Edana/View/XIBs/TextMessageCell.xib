@@ -26,16 +26,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p03-lV-noH">
-                        <rect key="frame" x="105" y="3" width="66" height="43"/>
+                        <rect key="frame" x="105" y="2" width="66" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyU-z4-sUU">
-                                <rect key="frame" x="10" y="2" width="46" height="26"/>
+                                <rect key="frame" x="10" y="2" width="46" height="28"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="19"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-Db-u82">
-                                <rect key="frame" x="22" y="28" width="34" height="13"/>
+                                <rect key="frame" x="22" y="30" width="34" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="GLR-xr-Xgp"/>
                                 </constraints>
@@ -58,9 +58,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="p03-lV-noH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="105" id="EMR-zu-oXq"/>
-                    <constraint firstAttribute="bottom" secondItem="p03-lV-noH" secondAttribute="bottom" constant="3" id="TF9-bJ-MeS"/>
+                    <constraint firstAttribute="bottom" secondItem="p03-lV-noH" secondAttribute="bottom" constant="2" id="TF9-bJ-MeS"/>
                     <constraint firstAttribute="trailing" secondItem="p03-lV-noH" secondAttribute="trailing" constant="160" id="hrw-0O-cNo"/>
-                    <constraint firstItem="p03-lV-noH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="k7j-gw-daE"/>
+                    <constraint firstItem="p03-lV-noH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="k7j-gw-daE"/>
                     <constraint firstItem="p03-lV-noH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="105" id="mty-6v-SbY"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p03-lV-noH" secondAttribute="trailing" constant="160" id="zII-v8-8Y9"/>
                 </constraints>

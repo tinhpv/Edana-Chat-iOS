@@ -74,6 +74,7 @@ struct Constant {
         static let newMessage = "new_message"
         static let chatlog = "chatlog"
         static let zoomVC = "zoom_image"
+        static let profileVC = "profile"
     }
     
     struct Color {
@@ -83,5 +84,6 @@ struct Constant {
         static let white = "White"
         static let darkGray = "DarkGray"
         static let lightGray = "LightGray"
+        static let lightBlue = "LightBlue"
     }
 }
