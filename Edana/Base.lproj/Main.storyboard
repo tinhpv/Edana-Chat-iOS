@@ -155,26 +155,26 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-B6-rPS">
-                                <rect key="frame" x="142.5" y="561" width="129" height="32"/>
+                                <rect key="frame" x="140.5" y="561" width="133" height="36"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                                 <state key="normal" title="Forgot password">
                                     <color key="titleColor" name="DarkBlue"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...or sign in with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyQ-38-3Pq">
-                                <rect key="frame" x="147" y="631" width="120" height="20"/>
+                                <rect key="frame" x="147.5" y="635" width="119.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="17"/>
                                 <color key="textColor" name="DarkGray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iu-Or-VF0">
-                                <rect key="frame" x="165.5" y="827.5" width="141.5" height="16.5"/>
+                                <rect key="frame" x="163" y="826" width="144" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y85-Q1-7q9" userLabel="social_buttons">
-                                <rect key="frame" x="58" y="666.5" width="298" height="39"/>
+                                <rect key="frame" x="58" y="674" width="298" height="39"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb_button" translatesAutoresizingMaskIntoConstraints="NO" id="l3x-wO-l3a">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="39"/>
@@ -518,7 +518,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Name&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neN-pI-nvq">
-                                        <rect key="frame" x="120" y="70" width="227" height="22.5"/>
+                                        <rect key="frame" x="120" y="68" width="227" height="26"/>
                                         <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="19"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>
@@ -545,15 +545,25 @@
                                             <action selector="backButtonPressed:" destination="uDI-MF-m2w" eventType="touchUpInside" id="vDg-FA-yli"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zk0-8I-kOQ" userLabel="separator">
+                                        <rect key="frame" x="0.0" y="116.5" width="414" height="0.5"/>
+                                        <color key="backgroundColor" name="DarkGray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="UlT-5N-Rba"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zk0-8I-kOQ" secondAttribute="trailing" id="0wM-nh-bTc"/>
                                     <constraint firstItem="lKR-aC-gLf" firstAttribute="centerY" secondItem="Yct-hl-CLa" secondAttribute="centerY" id="19V-2t-tQu"/>
                                     <constraint firstItem="3hY-yK-6eH" firstAttribute="leading" secondItem="Art-pf-YoK" secondAttribute="leading" constant="20" id="2TR-hW-0Ug"/>
                                     <constraint firstItem="Yct-hl-CLa" firstAttribute="leading" secondItem="3hY-yK-6eH" secondAttribute="trailing" constant="17" id="6HW-Ip-MEY"/>
+                                    <constraint firstItem="zk0-8I-kOQ" firstAttribute="leading" secondItem="Art-pf-YoK" secondAttribute="leading" id="7RF-ce-fUS"/>
                                     <constraint firstItem="neN-pI-nvq" firstAttribute="leading" secondItem="Yct-hl-CLa" secondAttribute="trailing" constant="13" id="L5r-iK-iE5"/>
                                     <constraint firstAttribute="bottom" secondItem="3hY-yK-6eH" secondAttribute="bottom" constant="20" id="ME0-Ny-QAe"/>
                                     <constraint firstAttribute="trailing" secondItem="lKR-aC-gLf" secondAttribute="trailing" constant="20" id="PVz-1l-r84"/>
+                                    <constraint firstAttribute="bottom" secondItem="zk0-8I-kOQ" secondAttribute="bottom" id="UOj-hX-OC2"/>
                                     <constraint firstItem="Yct-hl-CLa" firstAttribute="centerY" secondItem="3hY-yK-6eH" secondAttribute="centerY" id="dSl-JU-icY"/>
                                     <constraint firstItem="neN-pI-nvq" firstAttribute="centerY" secondItem="Yct-hl-CLa" secondAttribute="centerY" id="en4-lB-U72"/>
                                     <constraint firstItem="lKR-aC-gLf" firstAttribute="leading" secondItem="neN-pI-nvq" secondAttribute="trailing" constant="13" id="miO-t8-NgY"/>
@@ -752,7 +762,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqX-UD-bzd">
-                                        <rect key="frame" x="346" y="62" width="43" height="33"/>
+                                        <rect key="frame" x="345" y="58" width="44" height="37"/>
                                         <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="18"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" name="DarkBlue"/>
@@ -834,7 +844,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vu-Tinh Phan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQZ-Dv-MkA">
-                                        <rect key="frame" x="64" y="64" width="102.5" height="20"/>
+                                        <rect key="frame" x="64" y="60.5" width="104" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="17"/>
                                         <color key="textColor" name="DarkBlue"/>
                                         <nil key="highlightedColor"/>
@@ -854,32 +864,49 @@
                                     <constraint firstAttribute="height" constant="165" id="wtx-53-2hU"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8S9-f4-zfB">
+                                <rect key="frame" x="0.0" y="175" width="414" height="687"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" name="White"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="home_message_cell" rowHeight="120" id="yJG-ik-2cp" customClass="HomeMessageCell" customModule="Edana" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yJG-ik-2cp" id="3nc-QU-toU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSm-xm-5ig">
                                 <rect key="frame" x="0.0" y="175" width="414" height="721"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09l-bK-s9i" userLabel="default_view">
-                                        <rect key="frame" x="77" y="178" width="260" height="365.5"/>
+                                        <rect key="frame" x="92" y="100" width="230" height="338"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_home_graphic" translatesAutoresizingMaskIntoConstraints="NO" id="ETO-X3-ANS">
-                                                <rect key="frame" x="5" y="8" width="250" height="250"/>
+                                                <rect key="frame" x="5" y="8" width="220" height="220"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="XCk-cF-7qA"/>
-                                                    <constraint firstAttribute="height" constant="250" id="f71-5Q-ixG"/>
+                                                    <constraint firstAttribute="width" constant="220" id="XCk-cF-7qA"/>
+                                                    <constraint firstAttribute="height" constant="220" id="f71-5Q-ixG"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No message yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ry9-1s-HEp">
-                                                <rect key="frame" x="61" y="278" width="138" height="22.5"/>
-                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="19"/>
+                                                <rect key="frame" x="49" y="248" width="132" height="25"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
                                                 <color key="textColor" name="DarkBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-sV-bP7">
-                                                <rect key="frame" x="0.0" y="315.5" width="260" height="50"/>
+                                                <rect key="frame" x="0.0" y="288" width="230" height="50"/>
                                                 <color key="backgroundColor" name="LightBlue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="IyK-Ia-5wg"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="17"/>
                                                 <state key="normal" title="Send Your First Message">
                                                     <color key="titleColor" name="DarkBlue"/>
                                                 </state>
@@ -904,26 +931,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="09l-bK-s9i" firstAttribute="centerX" secondItem="aSm-xm-5ig" secondAttribute="centerX" id="88h-Fu-3pA"/>
-                                    <constraint firstItem="09l-bK-s9i" firstAttribute="centerY" secondItem="aSm-xm-5ig" secondAttribute="centerY" id="ZJv-9M-BrB"/>
+                                    <constraint firstItem="09l-bK-s9i" firstAttribute="top" secondItem="aSm-xm-5ig" secondAttribute="top" constant="100" id="ALm-ep-zgG"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8S9-f4-zfB">
-                                <rect key="frame" x="0.0" y="175" width="414" height="687"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" name="White"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="home_message_cell" rowHeight="120" id="yJG-ik-2cp" customClass="HomeMessageCell" customModule="Edana" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yJG-ik-2cp" id="3nc-QU-toU">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="LightGray"/>
                         <constraints>
@@ -963,7 +973,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-xL-D4W">
-                                <rect key="frame" x="338" y="69" width="46" height="35"/>
+                                <rect key="frame" x="337" y="69" width="47" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="zzr-nV-OBi"/>
                                 </constraints>
@@ -991,7 +1001,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YQ-Pm-SQA">
-                                <rect key="frame" x="30" y="69" width="60" height="35"/>
+                                <rect key="frame" x="30" y="69" width="58" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="gBl-wd-FwM"/>
                                 </constraints>
@@ -1085,7 +1095,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dx4-aH-Kaz">
-                                <rect key="frame" x="0.0" y="103" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="user_cell" rowHeight="89" id="vdg-ow-2fh" customClass="UserCell" customModule="Edana" customModuleProvider="target">
@@ -1099,7 +1109,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w28-bl-Ts2">
-                                <rect key="frame" x="30" y="58" width="58" height="35"/>
+                                <rect key="frame" x="30" y="58" width="58" height="38"/>
                                 <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="19"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" name="DarkBlue"/>
@@ -1109,7 +1119,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNd-w2-KoQ">
-                                <rect key="frame" x="142" y="64" width="130" height="22.5"/>
+                                <rect key="frame" x="142" y="64" width="130" height="26"/>
                                 <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="19"/>
                                 <color key="textColor" name="DarkBlue"/>
                                 <nil key="highlightedColor"/>
